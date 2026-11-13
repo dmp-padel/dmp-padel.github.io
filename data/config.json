@@ -1,0 +1,41 @@
+{
+  "fuente": "https://www.bizkaiapadel.com",
+  "equipos": [
+    {
+      "id": "quinta",
+      "comp": 34,
+      "fase": 60,
+      "grupo": 55,
+      "equipo": "DMP",
+      "corto": "5ª",
+      "categoria": "5ª Masculina",
+      "liga": "Liga Bizkaina 26/27 · 5ª Masc. · Grupo 3",
+      "copa_fase": 271,
+      "copa_nombre": "Kopa 5ª Masculina 2026"
+    },
+    {
+      "id": "sexta",
+      "comp": 35,
+      "fase": 61,
+      "grupo": 62,
+      "equipo": "DMP Academy",
+      "corto": "6ª",
+      "categoria": "6ª Masculina",
+      "liga": "Liga Bizkaina 26/27 · 6ª Masc. · Grupo 1",
+      "copa_fase": 276,
+      "copa_nombre": "Kopa 6ª Masculina 2026"
+    },
+    {
+      "id": "femenino",
+      "comp": 41,
+      "fase": 67,
+      "grupo": 64,
+      "equipo": "DMP Valkyrias PIC",
+      "corto": "Chicas 6ª",
+      "categoria": "6ª Femenina",
+      "liga": "Liga Bizkaina 26/27 · 6ª Fem. · Grupo 1",
+      "copa_fase": 281,
+      "copa_nombre": "Kopa 6ª Femenina 2026"
+    }
+  ]
+}

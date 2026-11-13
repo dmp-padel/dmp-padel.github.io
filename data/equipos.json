@@ -1,0 +1,1665 @@
+[
+ {
+  "id": "quinta",
+  "nombre": "DMP",
+  "corto": "5ª",
+  "categoria": "5ª Masculina",
+  "liga": "Liga Bizkaina 26/27 · 5ª Masc. · Grupo 3",
+  "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/34?fase=60&grupoId=55&jornada=1",
+  "clasificacion": [
+   {
+    "equipo": "DMP",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 28,
+    "sc": 6,
+    "pts": 32
+   },
+   {
+    "equipo": "PadelBai ColónMetal",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 26,
+    "sc": 6,
+    "pts": 28
+   },
+   {
+    "equipo": "Picamos B",
+    "pj": 3,
+    "pg": 2,
+    "pp": 1,
+    "sf": 27,
+    "sc": 7,
+    "pts": 28
+   },
+   {
+    "equipo": "CT Begoñalde - Molinillos",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 23,
+    "sc": 9,
+    "pts": 27
+   },
+   {
+    "equipo": "AUSARTA Pic Quinta New",
+    "pj": 3,
+    "pg": 2,
+    "pp": 1,
+    "sf": 19,
+    "sc": 17,
+    "pts": 21
+   },
+   {
+    "equipo": "Torresolo IKEA MENDI",
+    "pj": 3,
+    "pg": 1,
+    "pp": 2,
+    "sf": 20,
+    "sc": 15,
+    "pts": 21
+   },
+   {
+    "equipo": "BTC SUSHI ARTIST",
+    "pj": 3,
+    "pg": 1,
+    "pp": 2,
+    "sf": 12,
+    "sc": 22,
+    "pts": 12
+   },
+   {
+    "equipo": "TORRESOLO ONDIZ",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 8,
+    "sc": 25,
+    "pts": 8
+   },
+   {
+    "equipo": "Laukariz Volea",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 2,
+    "sc": 28,
+    "pts": 2
+   },
+   {
+    "equipo": "Getxo Pádel TZ",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 0,
+    "sc": 30,
+    "pts": 0
+   }
+  ],
+  "partidos": [
+   {
+    "j": 1,
+    "fecha": "2026-09-20",
+    "hora": "16:30",
+    "rival": "Torresolo IKEA MENDI",
+    "lugar": "Visitante",
+    "sede": "Torresolo",
+    "dmp": 8,
+    "riv": 4,
+    "parejas": [
+     {
+      "dmp": "Santos Ladra - Iñigo Setien",
+      "riv": "Enrique Parra - Joseba Novo",
+      "sets": "7-6 6-2",
+      "g": 1
+     },
+     {
+      "dmp": "Erik Martinez - Roberto Blanco",
+      "riv": "Ibai Isla - Eduardo Moraleja",
+      "sets": "6-7 6-4 7-6",
+      "g": 1
+     },
+     {
+      "dmp": "Mikel Arizaga - Mikel Reigada",
+      "riv": "Eduardo Javier San Jose - Eneko Garcia",
+      "sets": "2-6 6-4 1-6",
+      "g": 0
+     },
+     {
+      "dmp": "Mikel Osorio - Iker Gonzalez",
+      "riv": "Gorka Martín - Ander Gonzalez",
+      "sets": "6-7 7-6 5-7",
+      "g": 0
+     },
+     {
+      "dmp": "Mikel Fernandez - Jonatan Jimenez",
+      "riv": "Adrian Constante - Imanol Nieto",
+      "sets": "1-6 6-4 6-3",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 2,
+    "fecha": "2026-09-26",
+    "hora": "12:30",
+    "rival": "Getxo Pádel TZ",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": 12,
+    "riv": 0,
+    "parejas": [
+     {
+      "dmp": "Andoni Iñiguez - Erik Martinez",
+      "riv": "Luis Jose Palacio - Jose Maria Prieta",
+      "sets": "6-2 6-3",
+      "g": 1
+     },
+     {
+      "dmp": "Santos Ladra - Mikel Osorio",
+      "riv": "Asier Cabañas - Asier Hermosilla",
+      "sets": "6-0 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Iker Gonzalez - Roberto Blanco",
+      "riv": "Mikel Zuñeda - Garikoitz Zarraga",
+      "sets": "6-0 6-0",
+      "g": 1
+     },
+     {
+      "dmp": "Kepa Diaz - Bruno Calderon",
+      "riv": "Ander Aresti - Jon Rodriguez",
+      "sets": "6-3 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Eñaut Beobide - Urko Garcia",
+      "riv": "Pedro Pablo Roy - Pablo Angel Gutierrez",
+      "sets": "6-3 6-0",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 3,
+    "fecha": "2026-11-08",
+    "hora": "19:30",
+    "rival": "Laukariz Volea",
+    "lugar": "Visitante",
+    "sede": "C.C. Laukariz",
+    "dmp": 12,
+    "riv": 0,
+    "parejas": [
+     {
+      "dmp": "Santos Ladra - Iñigo Setien",
+      "riv": "Mikel Arzoz - Mario Pinacho",
+      "sets": "6-0 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Eneko Gomez - Andoni Iñiguez",
+      "riv": "Roberto Hernando - Unai Baez",
+      "sets": "6-2 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Mikel Osorio - Asier Orbe",
+      "riv": "Carlos Hermosa - Fernando Argüello",
+      "sets": "6-2 6-4",
+      "g": 1
+     },
+     {
+      "dmp": "Kepa Diaz - Pablo Calzado",
+      "riv": "Juan Daniel Tovio - Jose Pau",
+      "sets": "6-1 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Pablo Garcia De Pereda - Jonatan Jimenez",
+      "riv": "Domingo Rojo - Juan Ochagavia",
+      "sets": "6-3 6-4",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 4,
+    "fecha": "2026-11-15",
+    "hora": "12:30",
+    "rival": "AUSARTA Pic Quinta New",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 5,
+    "fecha": "2026-11-21",
+    "hora": "19:00",
+    "rival": "BTC SUSHI ARTIST",
+    "lugar": "Visitante",
+    "sede": "Bilbao Padel Indoor",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 6,
+    "fecha": "2026-11-29",
+    "hora": "17:00",
+    "rival": "PadelBai ColónMetal",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 7,
+    "fecha": "2026-12-20",
+    "hora": "",
+    "rival": "TORRESOLO ONDIZ",
+    "lugar": "Visitante",
+    "sede": "Torresolo",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 8,
+    "fecha": "2026-12-27",
+    "hora": "",
+    "rival": "CT Begoñalde - Molinillos",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 9,
+    "fecha": "2027-01-10",
+    "hora": "",
+    "rival": "Picamos B",
+    "lugar": "Visitante",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 10,
+    "fecha": "2027-01-17",
+    "hora": "",
+    "rival": "Torresolo IKEA MENDI",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 11,
+    "fecha": "2027-01-24",
+    "hora": "",
+    "rival": "Getxo Pádel TZ",
+    "lugar": "Visitante",
+    "sede": "PadelBai",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 12,
+    "fecha": "2027-01-31",
+    "hora": "",
+    "rival": "Laukariz Volea",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 13,
+    "fecha": "2027-02-05",
+    "hora": "21:00",
+    "rival": "AUSARTA Pic Quinta New",
+    "lugar": "Visitante",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 14,
+    "fecha": "2027-02-14",
+    "hora": "",
+    "rival": "BTC SUSHI ARTIST",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 15,
+    "fecha": "2027-02-21",
+    "hora": "",
+    "rival": "PadelBai ColónMetal",
+    "lugar": "Visitante",
+    "sede": "PadelBai",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 16,
+    "fecha": "2027-02-28",
+    "hora": "",
+    "rival": "TORRESOLO ONDIZ",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 17,
+    "fecha": "2027-03-07",
+    "hora": "",
+    "rival": "CT Begoñalde - Molinillos",
+    "lugar": "Visitante",
+    "sede": "Polideportivo San Ignacio Bilbao Kirolak",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 18,
+    "fecha": "2027-03-14",
+    "hora": "",
+    "rival": "Picamos B",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   }
+  ],
+  "jugadores": [
+   {
+    "nombre": "Santos Ladra",
+    "pj": 3,
+    "pg": 3,
+    "sg": 6,
+    "sp": 0,
+    "cpj": 3,
+    "cpg": 2,
+    "csg": 4,
+    "csp": 2
+   },
+   {
+    "nombre": "Iñigo Setien",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 0,
+    "cpj": 2,
+    "cpg": 2,
+    "csg": 4,
+    "csp": 0
+   },
+   {
+    "nombre": "Erik Martinez",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 3,
+    "cpg": 3,
+    "csg": 6,
+    "csp": 0
+   },
+   {
+    "nombre": "Roberto Blanco",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 3,
+    "cpg": 3,
+    "csg": 6,
+    "csp": 0
+   },
+   {
+    "nombre": "Mikel Arizaga",
+    "pj": 1,
+    "pg": 0,
+    "sg": 1,
+    "sp": 2,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Mikel Reigada",
+    "pj": 1,
+    "pg": 0,
+    "sg": 1,
+    "sp": 2,
+    "cpj": 2,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 2
+   },
+   {
+    "nombre": "Mikel Osorio",
+    "pj": 3,
+    "pg": 2,
+    "sg": 5,
+    "sp": 2,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Iker Gonzalez",
+    "pj": 2,
+    "pg": 1,
+    "sg": 3,
+    "sp": 2,
+    "cpj": 2,
+    "cpg": 2,
+    "csg": 4,
+    "csp": 0
+   },
+   {
+    "nombre": "Mikel Fernandez",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Jonatan Jimenez",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Andoni Iñiguez",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 0,
+    "cpj": 3,
+    "cpg": 3,
+    "csg": 6,
+    "csp": 0
+   },
+   {
+    "nombre": "Kepa Diaz",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Bruno Calderon",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Eñaut Beobide",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 1,
+    "csp": 2
+   },
+   {
+    "nombre": "Urko Garcia",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Eneko Gomez",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 2,
+    "cpg": 2,
+    "csg": 4,
+    "csp": 1
+   },
+   {
+    "nombre": "Asier Orbe",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 1
+   },
+   {
+    "nombre": "Pablo Calzado",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Pablo Garcia De Pereda",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 2,
+    "cpg": 1,
+    "csg": 3,
+    "csp": 2
+   },
+   {
+    "nombre": "Iker Aguirre",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Jorge Marcos",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   }
+  ],
+  "copa": {
+   "nombre": "Kopa 5ª Masculina 2026",
+   "fuente": "https://www.bizkaiapadel.com/Home/CuadroLiga?faseId=271",
+   "partidos": [
+    {
+     "ronda": "Dieciseisavos de final",
+     "fecha": "2026-10-04",
+     "hora": "17:00",
+     "rival": "Picamos B",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": 10,
+     "riv": 2,
+     "parejas": [
+      {
+       "dmp": "Andoni Iñiguez - Erik Martinez",
+       "riv": "Imanol Castillo - Marcos Madina",
+       "sets": "7-6 6-4",
+       "g": 1
+      },
+      {
+       "dmp": "Iker Gonzalez - Roberto Blanco",
+       "riv": "Ander Astorga - Saul Gutierrez",
+       "sets": "6-1 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Iker Aguirre - Santos Ladra",
+       "riv": "Jonathan Herrera - Ibai Viña",
+       "sets": "7-5 7-6",
+       "g": 1
+      },
+      {
+       "dmp": "Eñaut Beobide - Pablo Garcia De Pereda",
+       "riv": "Joseba Serrano - Aritz Urquiza",
+       "sets": "6-0 5-7 1-6",
+       "g": 0
+      },
+      {
+       "dmp": "Mikel Arizaga - Mikel Reigada",
+       "riv": "Eder Hernandez - Imanol Sierra",
+       "sets": "6-2 6-4",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "ronda": "Octavos de final",
+     "fecha": "2026-10-25",
+     "hora": "14:00",
+     "rival": "CT BEGOÑALDE 5M",
+     "lugar": "Visitante",
+     "sede": "Polideportivo San Ignacio Bilbao Kirolak",
+     "dmp": 12,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "Santos Ladra - Iñigo Setien",
+       "riv": "Hugo Valle - Arkaitz De Larrañaga",
+       "sets": "6-1 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Erik Martinez - Roberto Blanco",
+       "riv": "Gonzalo Aranguren - Stepan Potapov",
+       "sets": "6-1 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Andoni Iñiguez - Eneko Gomez",
+       "riv": "Alvaro Fragoso - Mikel Larrinaga",
+       "sets": "6-2 6-4",
+       "g": 1
+      },
+      {
+       "dmp": "Jorge Marcos - Bruno Calderon",
+       "riv": "Diego González - Ignacio Casado",
+       "sets": "7-6 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Pablo Calzado - Pablo Garcia De Pereda",
+       "riv": "Damian Alejandro Knopoff - Jon Ander Carrasco",
+       "sets": "6-0 6-0",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "ronda": "Cuartos de final",
+     "fecha": "2026-11-06",
+     "hora": "21:30",
+     "rival": "Ausarta Pic QUINTA",
+     "lugar": "Visitante",
+     "sede": "BamVolea PIC",
+     "dmp": 10,
+     "riv": 2,
+     "parejas": [
+      {
+       "dmp": "Andoni Iñiguez - Iñigo Setien",
+       "riv": "Alejandro Amaro - Jose Luis Gomez",
+       "sets": "6-2 6-3",
+       "g": 1
+      },
+      {
+       "dmp": "Erik Martinez - Roberto Blanco",
+       "riv": "Iker Gonzalez - Alberto Cea",
+       "sets": "6-2 7-6",
+       "g": 1
+      },
+      {
+       "dmp": "Mikel Reigada - Santos Ladra",
+       "riv": "Leoncio Laza - Carlos Martinez",
+       "sets": "6-7 5-7",
+       "g": 0
+      },
+      {
+       "dmp": "Asier Orbe - Eneko Gomez",
+       "riv": "Jeronimo Algar - Julen Oregi",
+       "sets": "1-6 6-2 7-5",
+       "g": 1
+      },
+      {
+       "dmp": "Mikel Osorio - Iker Gonzalez",
+       "riv": "Oier Atxalandabaso - Javier Nuñez",
+       "sets": "6-2 6-2",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "ronda": "Semifinales",
+     "fecha": "2026-12-12",
+     "hora": "17:30",
+     "rival": "Gernikaland",
+     "lugar": "Local",
+     "sede": "Bilbao Padel Indoor",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    }
+   ]
+  }
+ },
+ {
+  "id": "sexta",
+  "nombre": "DMP Academy",
+  "corto": "6ª",
+  "categoria": "6ª Masculina",
+  "liga": "Liga Bizkaina 26/27 · 6ª Masc. · Grupo 1",
+  "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/35?fase=61&grupoId=62&jornada=1",
+  "clasificacion": [
+   {
+    "equipo": "PADELZALEAK PADELKO 6M1",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 17,
+    "sc": 2,
+    "pts": 21
+   },
+   {
+    "equipo": "RC JOLASETA CAÑEROS",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 16,
+    "sc": 3,
+    "pts": 21
+   },
+   {
+    "equipo": "DMP Academy",
+    "pj": 3,
+    "pg": 2,
+    "pp": 1,
+    "sf": 14,
+    "sc": 8,
+    "pts": 19
+   },
+   {
+    "equipo": "Leioa Pádel Club",
+    "pj": 3,
+    "pg": 2,
+    "pp": 1,
+    "sf": 14,
+    "sc": 6,
+    "pts": 16
+   },
+   {
+    "equipo": "6 ENKARTERRI PADEL KLUBA",
+    "pj": 3,
+    "pg": 2,
+    "pp": 1,
+    "sf": 13,
+    "sc": 7,
+    "pts": 16
+   },
+   {
+    "equipo": "SEMINARIO PADEL CLUB DERIO M6",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 2,
+    "sc": 17,
+    "pts": 3
+   },
+   {
+    "equipo": "BTC UGAO INSTALACIONES",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 3,
+    "sc": 18,
+    "pts": 0
+   },
+   {
+    "equipo": "PADELZALEAK PADELKO 6M2",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 0,
+    "sc": 18,
+    "pts": 0
+   }
+  ],
+  "partidos": [
+   {
+    "j": 1,
+    "fecha": "2026-09-26",
+    "hora": "17:30",
+    "rival": "BTC UGAO INSTALACIONES",
+    "lugar": "Visitante",
+    "sede": "Bilbao Padel Indoor",
+    "dmp": 8,
+    "riv": 0,
+    "parejas": [
+     {
+      "dmp": "Luis Alfageme - David Gonzalez",
+      "riv": "Harriet Núñez - Gorka Gonzalez",
+      "sets": "6-2 3-6 7-6",
+      "g": 1
+     },
+     {
+      "dmp": "Andoni Esteban - Roberto Hernando",
+      "riv": "Emmanuel Pierre - Asier Lopez",
+      "sets": "4-6 6-4 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Unai Caballero - Esteban Estivill",
+      "riv": "David Carro - Borja Castañares",
+      "sets": "4-6 6-2 7-5",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 2,
+    "fecha": "2026-10-04",
+    "hora": "12:30",
+    "rival": "PADELZALEAK PADELKO 6M2",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": 8,
+    "riv": 0,
+    "parejas": [
+     {
+      "dmp": "Asier Cedrun - Gorka Ayala",
+      "riv": "Eneko Ochoa - Xabier Parada",
+      "sets": "6-1 6-2",
+      "g": 1
+     },
+     {
+      "dmp": "Iñigo Jauregui - Lander Mateos",
+      "riv": "Aimar Yurrebaso - Aimar Unzueta",
+      "sets": "6-2 6-0",
+      "g": 1
+     },
+     {
+      "dmp": "David Sanz - Ander Diaz",
+      "riv": "Kristian Barreto - Iñaki Txarterina",
+      "sets": "6-3 7-6",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 3,
+    "fecha": "2026-11-08",
+    "hora": "12:30",
+    "rival": "PADELZALEAK PADELKO 6M1",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": 3,
+    "riv": 5,
+    "parejas": [
+     {
+      "dmp": "Gorka Ayala - David Gonzalez",
+      "riv": "Iñigo Uribarri - Lander Arrizabalaga",
+      "sets": "3-6 6-3 6-2",
+      "g": 1
+     },
+     {
+      "dmp": "Jorge Negro - Esteban Estivill",
+      "riv": "Iñigo Lopez - Adrian Demidov",
+      "sets": "1-6 2-6",
+      "g": 0
+     },
+     {
+      "dmp": "Andoni Esteban - Javier Herreros",
+      "riv": "Iñigo Uria - Edgar San Millan",
+      "sets": "2-6 3-6",
+      "g": 0
+     }
+    ]
+   },
+   {
+    "j": 4,
+    "fecha": "2026-11-14",
+    "hora": "18:30",
+    "rival": "RC JOLASETA CAÑEROS",
+    "lugar": "Visitante",
+    "sede": "R.C. Jolaseta",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 5,
+    "fecha": "2026-11-22",
+    "hora": "12:30",
+    "rival": "6 ENKARTERRI PADEL KLUBA",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 6,
+    "fecha": "2026-11-29",
+    "hora": "",
+    "rival": "Leioa Pádel Club",
+    "lugar": "Visitante",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 7,
+    "fecha": "2026-12-20",
+    "hora": "",
+    "rival": "SEMINARIO PADEL CLUB DERIO M6",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   }
+  ],
+  "jugadores": [
+   {
+    "nombre": "Luis Alfageme",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "David Gonzalez",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 2,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Andoni Esteban",
+    "pj": 2,
+    "pg": 1,
+    "sg": 2,
+    "sp": 3,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Roberto Hernando",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Unai Caballero",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 1,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Esteban Estivill",
+    "pj": 2,
+    "pg": 1,
+    "sg": 2,
+    "sp": 3,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Asier Cedrun",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Gorka Ayala",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Iñigo Jauregui",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 2,
+    "cpg": 0,
+    "csg": 1,
+    "csp": 4
+   },
+   {
+    "nombre": "Lander Mateos",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "David Sanz",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Ander Diaz",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Jorge Negro",
+    "pj": 1,
+    "pg": 0,
+    "sg": 0,
+    "sp": 2,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Javier Herreros",
+    "pj": 1,
+    "pg": 0,
+    "sg": 0,
+    "sp": 2,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 1,
+    "csp": 2
+   },
+   {
+    "nombre": "Jose Luis Bezanilla",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 2,
+    "cpg": 2,
+    "csg": 4,
+    "csp": 0
+   },
+   {
+    "nombre": "Xabier Diaz",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 1,
+    "csg": 2,
+    "csp": 0
+   },
+   {
+    "nombre": "Borja Arrieta",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 2,
+    "cpg": 2,
+    "csg": 4,
+    "csp": 0
+   }
+  ],
+  "copa": {
+   "nombre": "Kopa 6ª Masculina 2026",
+   "fuente": "https://www.bizkaiapadel.com/Home/CuadroLiga?faseId=276",
+   "partidos": [
+    {
+     "ronda": "Octavos de final",
+     "fecha": "2026-10-25",
+     "hora": "16:00",
+     "rival": "BTC UGAO INSTALACIONES",
+     "lugar": "Visitante",
+     "sede": "Bilbao Padel Indoor",
+     "dmp": 5,
+     "riv": 3,
+     "parejas": [
+      {
+       "dmp": "Unai Caballero - Iñigo Jauregui",
+       "riv": "Gorka Gonzalez - Sorin Iuga",
+       "sets": "4-6 5-7",
+       "g": 0
+      },
+      {
+       "dmp": "Jorge Negro - Jose Luis Bezanilla",
+       "riv": "Asier Lopez - Sergio Coello",
+       "sets": "6-0 6-0",
+       "g": 1
+      },
+      {
+       "dmp": "Xabier Diaz - Borja Arrieta",
+       "riv": "David Carro - Ander Agirregabiria",
+       "sets": "6-1 6-4",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "ronda": "Cuartos de final",
+     "fecha": "2026-11-01",
+     "hora": "18:00",
+     "rival": "Leioa Pádel Club",
+     "lugar": "Visitante",
+     "sede": "BamVolea PIC",
+     "dmp": 2,
+     "riv": 6,
+     "parejas": [
+      {
+       "dmp": "Gorka Ayala - David Gonzalez",
+       "riv": "Ander Prieto - Jurgi Rey",
+       "sets": "2-6 1-6",
+       "g": 0
+      },
+      {
+       "dmp": "Iñigo Jauregui - Javier Herreros",
+       "riv": "Aitor Jimenez - Miguel Cayon",
+       "sets": "3-6 6-4 3-6",
+       "g": 0
+      },
+      {
+       "dmp": "Jose Luis Bezanilla - Borja Arrieta",
+       "riv": "Alain Pascual - Sendoa Dorado",
+       "sets": "7-6 6-3",
+       "g": 1
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": "femenino",
+  "nombre": "DMP Valkyrias PIC",
+  "corto": "Chicas 6ª",
+  "categoria": "6ª Femenina",
+  "liga": "Liga Bizkaina 26/27 · 6ª Fem. · Grupo 1",
+  "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/41?fase=67&grupoId=64&jornada=1",
+  "clasificacion": [
+   {
+    "equipo": "DMP Valkyrias PIC",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 17,
+    "sc": 4,
+    "pts": 22
+   },
+   {
+    "equipo": "Btc Bordado Express",
+    "pj": 3,
+    "pg": 3,
+    "pp": 0,
+    "sf": 15,
+    "sc": 6,
+    "pts": 18
+   },
+   {
+    "equipo": "PADEL ZAMUDIO W6",
+    "pj": 3,
+    "pg": 2,
+    "pp": 1,
+    "sf": 13,
+    "sc": 8,
+    "pts": 15
+   },
+   {
+    "equipo": "Biwak + Lobbers",
+    "pj": 3,
+    "pg": 1,
+    "pp": 2,
+    "sf": 10,
+    "sc": 11,
+    "pts": 11
+   },
+   {
+    "equipo": "SEMINARIO PADEL CLUB DERIO F6-1",
+    "pj": 3,
+    "pg": 1,
+    "pp": 2,
+    "sf": 8,
+    "sc": 13,
+    "pts": 9
+   },
+   {
+    "equipo": "Laukariz x4",
+    "pj": 3,
+    "pg": 1,
+    "pp": 2,
+    "sf": 9,
+    "sc": 13,
+    "pts": 8
+   },
+   {
+    "equipo": "CT BEGOÑALDE 6F",
+    "pj": 3,
+    "pg": 1,
+    "pp": 2,
+    "sf": 6,
+    "sc": 13,
+    "pts": 8
+   },
+   {
+    "equipo": "NESKAK ENKARTERRI PADEL KLUBA",
+    "pj": 3,
+    "pg": 0,
+    "pp": 3,
+    "sf": 5,
+    "sc": 15,
+    "pts": 5
+   }
+  ],
+  "partidos": [
+   {
+    "j": 1,
+    "fecha": "2026-09-27",
+    "hora": "13:00",
+    "rival": "CT BEGOÑALDE 6F",
+    "lugar": "Visitante",
+    "sede": "Polideportivo San Ignacio Bilbao Kirolak",
+    "dmp": 8,
+    "riv": 0,
+    "parejas": [
+     {
+      "dmp": "M Esther Lopez - Laura Gomez",
+      "riv": "Irati Garcia - Katalin Iturrioz",
+      "sets": "6-3 6-4",
+      "g": 1
+     },
+     {
+      "dmp": "Iciar Perez - Maider Rojo",
+      "riv": "Edurne Perez - Gema Laucirica",
+      "sets": "6-3 6-4",
+      "g": 1
+     },
+     {
+      "dmp": "Marta Maestro - Marta Garate",
+      "riv": "Leire Iturburu - Isabel Gorriti",
+      "sets": "6-1 6-2",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 2,
+    "fecha": "2026-10-04",
+    "hora": "18:00",
+    "rival": "PADEL ZAMUDIO W6",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": 6,
+    "riv": 2,
+    "parejas": [
+     {
+      "dmp": "Kiara Granados - Ainara Unamuno",
+      "riv": "Lidia Ortiz De Zárate - Garbiñe Para",
+      "sets": "6-3 6-2",
+      "g": 1
+     },
+     {
+      "dmp": "Izaskun Cuesta - Sandra Bibiana Montoya",
+      "riv": "Naroa Uriarte - Mariana Barrón",
+      "sets": "3-6 6-3 6-3",
+      "g": 1
+     },
+     {
+      "dmp": "Ariane Garcia - Ainhoa Cobo",
+      "riv": "Meritxell Pascual - Valeroa Muñoz",
+      "sets": "6-4 3-6 6-7",
+      "g": 0
+     }
+    ]
+   },
+   {
+    "j": 3,
+    "fecha": "2026-11-07",
+    "hora": "12:30",
+    "rival": "Laukariz x4",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": 8,
+    "riv": 0,
+    "parejas": [
+     {
+      "dmp": "Ainara Unamuno - Kiara Granados",
+      "riv": "Virghinia Smetanca - Igone Del Cid",
+      "sets": "6-3 6-3",
+      "g": 1
+     },
+     {
+      "dmp": "Laura Gomez - M Esther Lopez",
+      "riv": "Nagore Uriarte - Olatz Martinez",
+      "sets": "6-1 6-7 6-2",
+      "g": 1
+     },
+     {
+      "dmp": "Sandra Bibiana Montoya - Marta Garate",
+      "riv": "Teresa Sarralde - Lucia Eugenia Herrero",
+      "sets": "6-3 6-1",
+      "g": 1
+     }
+    ]
+   },
+   {
+    "j": 4,
+    "fecha": "2026-11-14",
+    "hora": "12:00",
+    "rival": "Btc Bordado Express",
+    "lugar": "Visitante",
+    "sede": "Bilbao Padel Indoor",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 5,
+    "fecha": "2026-11-22",
+    "hora": "16:30",
+    "rival": "NESKAK ENKARTERRI PADEL KLUBA",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 6,
+    "fecha": "2026-11-28",
+    "hora": "12:00",
+    "rival": "Biwak + Lobbers",
+    "lugar": "Visitante",
+    "sede": "Biwak",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   },
+   {
+    "j": 7,
+    "fecha": "2026-12-18",
+    "hora": "",
+    "rival": "SEMINARIO PADEL CLUB DERIO F6-1",
+    "lugar": "Local",
+    "sede": "BamVolea PIC",
+    "dmp": "",
+    "riv": "",
+    "parejas": []
+   }
+  ],
+  "jugadores": [
+   {
+    "nombre": "M Esther Lopez",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Laura Gomez",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Iciar Perez",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Maider Rojo",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Marta Maestro",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Marta Garate",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Kiara Granados",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 0,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Ainara Unamuno",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Izaskun Cuesta",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Sandra Bibiana Montoya",
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
+    "sp": 1,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Ariane Garcia",
+    "pj": 1,
+    "pg": 0,
+    "sg": 1,
+    "sp": 2,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Ainhoa Cobo",
+    "pj": 1,
+    "pg": 0,
+    "sg": 1,
+    "sp": 2,
+    "cpj": 0,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 0
+   },
+   {
+    "nombre": "Miren Garcia",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Paula Sánchez",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
+    "nombre": "Maria Puig",
+    "pj": 0,
+    "pg": 0,
+    "sg": 0,
+    "sp": 0,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   }
+  ],
+  "copa": {
+   "nombre": "Kopa 6ª Femenina 2026",
+   "fuente": "https://www.bizkaiapadel.com/Home/CuadroLiga?faseId=281",
+   "partidos": [
+    {
+     "ronda": "Octavos de final",
+     "fecha": "2026-10-25",
+     "hora": "17:30",
+     "rival": "Gernikaland_FEM",
+     "lugar": "Visitante",
+     "sede": "Bilbao Padel Indoor",
+     "dmp": 0,
+     "riv": 8,
+     "parejas": [
+      {
+       "dmp": "Laura Gomez - Ainara Unamuno",
+       "riv": "Bihotza Learreta - Jasone Ojenbarrena",
+       "sets": "2-6 2-6",
+       "g": 0
+      },
+      {
+       "dmp": "Miren Garcia - Marta Maestro",
+       "riv": "Joana Aldazabal - Iratxe Amezua",
+       "sets": "0-6 1-6",
+       "g": 0
+      },
+      {
+       "dmp": "Paula Sánchez - Maria Puig",
+       "riv": "Yolanda Pardo - Nicole Mercado",
+       "sets": "4-6 2-6",
+       "g": 0
+      }
+     ]
+    }
+   ]
+  }
+ }
+]

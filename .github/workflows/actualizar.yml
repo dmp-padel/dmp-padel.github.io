@@ -1,0 +1,47 @@
+name: Actualizar resultados de la Federación
+
+on:
+  schedule:
+    # Las horas de GitHub van en UTC. 22:30 UTC = domingo 23:30 en invierno (00:30 del lunes en verano).
+    - cron: "30 22 * * 0"
+    # Segunda pasada el lunes a las 9:00 (invierno) por si los resultados se meten tarde.
+    - cron: "0 8 * * 1"
+  workflow_dispatch: # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizar
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Leer datos de la Federación
+        run: python scripts/scrape.py
+
+      - name: Montar la web
+        run: python scripts/build.py
+
+      - name: Guardar y publicar
+        run: |
+          git config user.name "dmp-bot"
+          git config user.email "dmp-bot@users.noreply.github.com"
+          git add data index.html
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Resultados actualizados $(TZ=Europe/Madrid date +'%d/%m/%Y %H:%M')"
+            git push
+          fi

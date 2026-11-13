@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMP Pádel · Resultados y clasificaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="app-css">:root{--bg:#03050a;--panel:#0a0f1c;--panel2:#0d1426;--line:rgba(0,114,250,.22);--blue:#0072fa;--blue2:#3d9bff;--cyan:#6fd0ff;--text:#eaf2ff;--muted:#8a9bb8;--win:#22e3a0;--loss:#ff4d6d;--draw:#ffc857;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:Barlow,system-ui,sans-serif;font-size:15px;line-height:1.45;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 500px at 15% -10%,rgba(0,114,250,.35),transparent 60%),radial-gradient(700px 500px at 110% 20%,rgba(61,155,255,.18),transparent 60%),repeating-linear-gradient(-18deg,transparent 0 46px,rgba(0,114,250,.035) 46px 48px),var(--bg)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.h,h1,h2,h3{font-family:"Barlow Condensed",sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:.4px;line-height:1}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px 40px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(3,5,10,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1100px;margin:0 auto;padding:10px 16px 0;display:flex;flex-direction:column;gap:8px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:40px;filter:drop-shadow(0 0 10px rgba(0,114,250,.6))}
+.brand b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:22px;letter-spacing:.5px;text-transform:uppercase}
+.brand small{display:block;color:var(--muted);font-size:12px;margin-top:-2px}
+.nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:10px}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:none;padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px;color:var(--muted);border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:.2s}
+.nav a.on{color:#fff;background:linear-gradient(120deg,var(--blue),var(--blue2));border-color:transparent;box-shadow:0 4px 18px rgba(0,114,250,.45)}
+@media(min-width:760px){.top-in{flex-direction:row;align-items:center;justify-content:space-between;padding:10px 16px}.nav{padding-bottom:0}}
+
+/* hero */
+.hero{position:relative;text-align:center;padding:34px 0 18px}
+.logo-wrap{position:relative;width:210px;height:210px;margin:0 auto 14px;display:grid;place-items:center}
+.logo-wrap:before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 0deg,transparent,rgba(0,114,250,.0),rgba(61,155,255,.75),transparent 40%);animation:spin 6s linear infinite;-webkit-mask:radial-gradient(circle,transparent 62%,#000 63%,#000 66%,transparent 67%);mask:radial-gradient(circle,transparent 62%,#000 63%,#000 66%,transparent 67%)}
+.logo-wrap:after{content:"";position:absolute;inset:20px;border-radius:50%;background:radial-gradient(circle,rgba(0,114,250,.35),transparent 70%);filter:blur(10px);animation:pulse 3s ease-in-out infinite}
+.logo-wrap img{position:relative;z-index:1;width:190px;filter:drop-shadow(0 0 22px rgba(0,114,250,.7));animation:float 4s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{opacity:.5;transform:scale(.92)}}
+@keyframes float{50%{transform:translateY(-6px)}}
+.hero h1{font-size:clamp(40px,11vw,72px);background:linear-gradient(100deg,#fff 20%,var(--cyan) 50%,var(--blue2) 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);margin-top:8px;font-weight:500}
+.stats{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+.stat{padding:10px 16px;border-radius:14px;background:rgba(0,114,250,.1);border:1px solid var(--line);min-width:96px}
+.stat b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:28px;color:#fff}
+.stat small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+
+.demo{margin:14px 0 4px;padding:10px 14px;border-radius:12px;background:rgba(255,200,87,.08);border:1px dashed rgba(255,200,87,.45);color:#ffe2a3;font-size:13.5px}
+
+.sec{margin-top:30px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px}
+.sec-h h2{font-size:26px;position:relative;padding-left:14px}
+.sec-h h2:before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:5px;border-radius:3px;background:linear-gradient(var(--cyan),var(--blue));transform:skewX(-14deg)}
+.sec-h a{color:var(--blue2);font-weight:600;font-size:14px}
+
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:linear-gradient(160deg,rgba(0,114,250,.13),rgba(255,255,255,.02) 55%);border:1px solid var(--line);border-radius:var(--r);padding:16px;position:relative;overflow:hidden}
+
+/* team card */
+.tcard{display:block;transition:transform .2s,box-shadow .2s}
+.tcard:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(0,114,250,.25)}
+.tcard:after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;background:repeating-linear-gradient(-30deg,rgba(0,114,250,.18) 0 6px,transparent 6px 16px);border-radius:50%;opacity:.6}
+.tc-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--blue);color:#fff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.tc-liga{color:var(--muted);font-size:13px}
+.tcard h3{font-size:30px;margin:10px 0 8px}
+.tc-main{display:flex;align-items:flex-end;gap:18px}
+.pos b{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:64px;line-height:.9;background:linear-gradient(180deg,#fff,var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.pos small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase}
+.tc-kpis{display:flex;gap:16px;padding-bottom:6px}
+.tc-kpis b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:800;font-size:26px}
+.tc-kpis small{color:var(--muted);font-size:12px;text-transform:uppercase}
+.forma{display:flex;gap:6px;margin:12px 0 10px;align-items:center}
+.forma .lbl{color:var(--muted);font-size:12px;text-transform:uppercase;margin-right:4px}
+.dot{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:12px;font-weight:800;color:#03050a;transform:skewX(-8deg)}
+.dot.V{background:var(--win);box-shadow:0 0 10px rgba(34,227,160,.45)}
+.dot.D{background:var(--loss)}
+.dot.E{background:var(--draw)}
+.dot.n{background:rgba(255,255,255,.07)}
+.tc-next{font-size:13.5px;color:var(--muted);border-top:1px solid rgba(255,255,255,.07);padding-top:10px}
+.tc-next b{color:#fff}
+
+/* matches */
+.list{display:flex;flex-direction:column;gap:10px}
+.match{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-left:4px solid rgba(255,255,255,.15);border-radius:14px;padding:12px 14px}
+.match.m-V{border-left-color:var(--win)}
+.match.m-D{border-left-color:var(--loss)}
+.match.m-E{border-left-color:var(--draw)}
+.m-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.m-meta .j{font-family:"Barlow Condensed";font-style:italic;font-weight:800;color:var(--blue2);font-size:15px}
+.tag{padding:1px 8px;border-radius:6px;background:rgba(0,114,250,.18);color:var(--cyan);font-weight:700;font-size:11.5px}
+.m-body{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+.m-team{font-weight:600;font-size:15px}
+.m-team.us{color:#fff;font-weight:800}
+.m-body .m-team:last-child{text-align:right}
+.m-score{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:28px;padding:0 6px;color:#fff}
+.m-score i{color:var(--muted);padding:0 4px}
+.m-score.vs{font-size:18px;color:var(--muted)}
+.m-foot{margin-top:8px;display:flex;justify-content:flex-end}
+.badge{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;padding:3px 9px;border-radius:999px}
+.b-V{background:rgba(34,227,160,.14);color:var(--win)}
+.b-D{background:rgba(255,77,109,.14);color:var(--loss)}
+.b-E{background:rgba(255,200,87,.14);color:var(--draw)}
+.b-P{background:rgba(255,255,255,.06);color:var(--muted)}
+
+/* team page */
+.thero{padding:26px 0 6px;position:relative}
+.thero h1{font-size:clamp(40px,10vw,64px);margin:10px 0 4px}
+.thero p{color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+@media(min-width:760px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{padding:14px;display:flex;align-items:center;gap:12px}
+.kpi b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:36px;line-height:1}
+.kpi small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.ring{--p:0;width:58px;height:58px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(var(--blue2) calc(var(--p)*1%),rgba(255,255,255,.08) 0);position:relative}
+.ring:before{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--panel2)}
+.ring span{position:relative;font-family:"Barlow Condensed";font-weight:800;font-size:16px}
+.subtabs{display:flex;gap:4px;margin-top:22px;padding:4px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.subtabs button{flex:1;padding:10px 6px;border-radius:10px;font-weight:700;color:var(--muted);font-size:14px}
+.subtabs button.on{background:linear-gradient(120deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 4px 14px rgba(0,114,250,.35)}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700;text-align:center;padding:11px 8px;background:rgba(0,114,250,.08);white-space:nowrap}
+td{text-align:center;padding:11px 8px;border-top:1px solid rgba(255,255,255,.05);white-space:nowrap}
+th.l,td.l{text-align:left}
+td.pts{font-family:"Barlow Condensed";font-weight:800;font-size:19px;color:#fff}
+tr.us td{background:linear-gradient(90deg,rgba(0,114,250,.32),rgba(0,114,250,.08));font-weight:700}
+tr.us td:first-child{box-shadow:inset 4px 0 0 var(--cyan)}
+.pn{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.06);font-weight:800;font-size:13px}
+.pn.top{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
+.legend{color:var(--muted);font-size:12px;margin-top:8px}
+
+/* players */
+.pl{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px}
+.pl .rk{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:26px;color:var(--blue2);width:30px;text-align:center}
+.pl .nm{font-weight:700;font-size:15.5px}
+.pl .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.bar{height:6px;border-radius:4px;background:rgba(255,255,255,.07);margin-top:7px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.pl .pc{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:26px}
+.pl .pc small{font-size:14px;color:var(--muted)}
+
+/* podium */
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:10px;align-items:end;margin-bottom:18px}
+.pod{text-align:center;padding:14px 8px 12px;border-radius:16px 16px 10px 10px;background:linear-gradient(180deg,rgba(0,114,250,.28),rgba(0,114,250,.06));border:1px solid var(--line)}
+.pod.p1{padding-top:22px;background:linear-gradient(180deg,rgba(61,155,255,.5),rgba(0,114,250,.1));box-shadow:0 10px 40px rgba(0,114,250,.35)}
+.pod .med{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:34px;line-height:1}
+.pod .nm{font-weight:700;font-size:14px;margin-top:6px;word-break:break-word}
+.pod .pc{font-family:"Barlow Condensed";font-weight:800;font-size:22px;color:var(--cyan)}
+.pod small{color:var(--muted);font-size:11.5px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.filters button{padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);font-weight:700;font-size:13px;color:var(--muted)}
+.filters button.on{border-color:var(--blue2);color:#fff;background:rgba(0,114,250,.25)}
+.empty{color:var(--muted);padding:18px;text-align:center;border:1px dashed rgba(255,255,255,.12);border-radius:14px}
+
+/* footer */
+.foot{max-width:1100px;margin:20px auto 0;padding:20px 16px 110px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06)}
+.btn{padding:9px 16px;border-radius:12px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.14)}
+.btn.pri{background:linear-gradient(120deg,var(--blue),var(--blue2));border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(0,114,250,.4)}
+.btn.warn{border-color:rgba(255,77,109,.5);color:#ffb3c1}
+.btn:disabled{opacity:.5}
+
+/* edit */
+.ebar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(6,10,20,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;align-items:center;justify-content:space-between}
+.ebar span{font-weight:700;color:var(--cyan);font-size:13px}
+.ebar div{display:flex;gap:8px}
+.esec{margin-top:24px}
+.esec h2{font-size:22px;margin-bottom:6px}
+.hint{color:var(--muted);font-size:13px;margin-bottom:10px}
+.fgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;font-weight:600}
+input,select{font:inherit;color:#fff;background:#0b1222;border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:9px 10px;width:100%;min-width:0;text-transform:none;letter-spacing:0}
+input:focus,select:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(0,114,250,.25)}
+.etbl td{padding:5px 4px}
+.etbl input{padding:7px 6px;font-size:14px}
+.etbl input.n{width:58px;text-align:center}
+.etbl input.t{min-width:140px}
+.etbl input.d{min-width:140px}
+.del{width:32px;height:32px;border-radius:9px;color:#ffb3c1;background:rgba(255,77,109,.1)}
+.add{margin-top:10px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);opacity:0;transition:.3s;background:#0d1730;border:1px solid var(--line);padding:10px 16px;border-radius:12px;font-size:14px;z-index:40;max-width:90vw;text-align:center;pointer-events:none}
+#toast.on{opacity:1;transform:translateX(-50%)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.kpi .forma{gap:3px}.kpi .dot{width:17px;height:17px;font-size:10px;border-radius:5px}.kpi .ring{width:52px;height:52px}
+.news-list{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.news{padding:0}
+.news-in{padding:14px 16px 16px}
+.news h3{font-size:26px;margin:2px 0 10px}
+.ph-strip{display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:#000}
+.ph-strip::-webkit-scrollbar{display:none}
+.ph{flex:0 0 82%;scroll-snap-align:start;padding:0;display:block}
+.ph-strip.one .ph{flex-basis:100%}
+.ph img{display:block;width:100%;height:240px;object-fit:cover}
+.score-band{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:rgba(0,114,250,.12);border:1px solid var(--line);margin-bottom:10px;position:relative}
+.score-band.bV{background:linear-gradient(100deg,rgba(34,227,160,.14),rgba(0,114,250,.12))}
+.score-band .m-team:nth-child(3){text-align:right}
+.score-band .badge{grid-column:1/-1;justify-self:center}
+.news-txt{color:#c9d6ee;font-size:15px}
+.more{display:inline-block;margin-top:8px;color:var(--blue2);font-weight:700;font-size:14px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.92);display:none;place-items:center;padding:16px}
+.lb.on{display:grid}
+.lb img{max-width:100%;max-height:100%;border-radius:10px}
+textarea{font:inherit;color:#fff;background:#0b1222;border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:9px 10px;width:100%;resize:vertical;text-transform:none;letter-spacing:0}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.th{position:relative;width:84px;height:84px;border-radius:10px;overflow:hidden;background:#0b1222;border:1px solid rgba(255,255,255,.14)}
+.th img{width:100%;height:100%;object-fit:cover}
+.th .del{position:absolute;top:4px;right:4px;width:26px;height:26px;background:rgba(0,0,0,.7)}
+.addph{display:grid;place-items:center;color:var(--blue2);font-weight:700;font-size:13px;cursor:pointer;border-style:dashed}
+.addph input{display:none}
+.esec.card{padding:14px}
+.ph img{height:200px;object-position:center 45%}
+.ph,.ph-strip.one .ph{flex:0 0 auto}.ph img{width:auto;max-width:85vw;height:200px;object-fit:cover}.ph-strip{padding:8px;gap:8px;background:rgba(0,0,0,.35)}.ph img{border-radius:10px}
+.upd{margin:14px 0 4px;padding:9px 14px;border-radius:12px;background:rgba(0,114,250,.08);border:1px solid var(--line);color:var(--muted);font-size:13px}
+.upd a,.src{color:var(--blue2);font-weight:600}
+.prs{display:flex;flex-direction:column;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06)}
+.pr{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:13.5px}
+.pr b{display:block;font-weight:600}
+.pr small{display:block;color:var(--muted);font-size:12px}
+.pr-r{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-weight:800;font-size:12px}
+.pr.w .pr-r{background:rgba(34,227,160,.15);color:var(--win)}
+.pr.l .pr-r{background:rgba(255,77,109,.15);color:var(--loss)}
+.pr-s{font-family:"Barlow Condensed";font-weight:700;font-size:15px;color:#fff;white-space:nowrap}
+/* visitas */
+.tbar{max-width:1100px;margin:0 auto;padding:6px 16px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}
+.visits{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:rgba(0,114,250,.12);border:1px solid var(--line);color:#cfe0ff}
+.visits b{font-family:"Barlow Condensed";font-weight:800;font-size:14px;color:#fff;letter-spacing:.3px}
+.vdot{width:7px;height:7px;border-radius:50%;background:var(--win);box-shadow:0 0 8px var(--win);animation:pulse 2s infinite}
+/* X3 */
+.x3{position:fixed;right:16px;bottom:18px;z-index:45;font-size:14.5px}
+body:has(.ebar) .x3{bottom:84px}
+.x3-fab{position:relative;width:76px;height:92px;display:block;padding:0}
+.x3-fab .ball{position:absolute;left:8px;bottom:12px;width:60px;height:60px;animation:bounce 1.6s cubic-bezier(.3,0,.5,1) infinite;filter:drop-shadow(0 6px 14px rgba(212,240,58,.35))}
+.x3-tag{position:absolute;left:50%;top:-2px;transform:translateX(-50%);z-index:2;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:17px;line-height:1;padding:3px 8px 2px;border-radius:8px;color:#fff;background:linear-gradient(120deg,var(--blue),var(--cyan));box-shadow:0 4px 14px rgba(0,114,250,.6);animation:tagb 1.6s cubic-bezier(.3,0,.5,1) infinite;letter-spacing:.5px}
+.x3-shadow{position:absolute;left:18px;bottom:4px;width:40px;height:8px;border-radius:50%;background:rgba(0,0,0,.55);animation:shad 1.6s cubic-bezier(.3,0,.5,1) infinite}
+.x3-hi{position:absolute;right:82px;bottom:38px;white-space:nowrap;background:#fff;color:#06101f;font-weight:700;font-size:13px;padding:7px 11px;border-radius:12px 12px 2px 12px;opacity:0;transform:translateX(8px);transition:.3s;pointer-events:none}
+.x3.hint .x3-hi{opacity:1;transform:none}
+.x3.open .x3-hi{display:none}
+@keyframes bounce{0%,100%{transform:translateY(-20px) rotate(-8deg)}48%{transform:translateY(0) rotate(4deg) scale(1.06,.92)}55%{transform:translateY(0) scale(.96,1.04)}}
+@keyframes tagb{0%,100%{transform:translateX(-50%) translateY(0)}48%,55%{transform:translateX(-50%) translateY(18px)}}
+@keyframes shad{0%,100%{transform:scale(.55);opacity:.35}48%,55%{transform:scale(1);opacity:.7}}
+.ball .eyes{transform-origin:50px 47px;animation:blink 4s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.x3.talk .x3-av .ball{animation:wiggle .35s infinite}
+@keyframes wiggle{50%{transform:rotate(10deg) translateY(-2px)}}
+.x3-panel{position:absolute;right:0;bottom:100px;width:min(360px,calc(100vw - 32px));height:min(520px,calc(100vh - 170px));display:flex;flex-direction:column;background:rgba(8,13,26,.97);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(0,114,250,.15);overflow:hidden;opacity:0;transform:translateY(16px) scale(.96);transform-origin:bottom right;pointer-events:none;transition:.25s}
+.x3.open .x3-panel{opacity:1;transform:none;pointer-events:auto}
+.x3-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:linear-gradient(120deg,rgba(0,114,250,.35),rgba(0,114,250,.08));border-bottom:1px solid var(--line)}
+.x3-head b{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:22px;display:block;line-height:1}
+.x3-head small{color:var(--muted);font-size:12px}
+.x3-av{width:40px;height:40px}
+.x3-av .ball{width:40px;height:40px}
+.x3-close{margin-left:auto;width:32px;height:32px;border-radius:10px;background:rgba(255,255,255,.06);color:var(--muted)}
+.x3-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.x3-m{max-width:88%;padding:9px 12px;border-radius:14px;line-height:1.45}
+.x3-m.bot{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-top-left-radius:4px;align-self:flex-start}
+.x3-m.me{background:linear-gradient(120deg,var(--blue),var(--blue2));align-self:flex-end;border-top-right-radius:4px}
+.x3-m b{color:#fff}
+.x3-V{color:var(--win);font-weight:700}.x3-D{color:var(--loss);font-weight:700}.x3-E{color:var(--draw);font-weight:700}
+.x3-prs{margin-top:6px;font-size:13px;color:#c9d6ee}
+.x3-go{display:inline-block;margin-top:8px;padding:6px 11px;border-radius:10px;background:rgba(0,114,250,.22);border:1px solid var(--line);color:var(--cyan);font-weight:700;font-size:13px}
+.x3-chips{display:flex;gap:6px;overflow-x:auto;padding:0 12px 10px;scrollbar-width:none}
+.x3-chips::-webkit-scrollbar{display:none}
+.x3-chips button{flex:none;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:rgba(0,114,250,.1);color:#cfe0ff;font-size:13px;font-weight:600}
+.x3-form{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.06)}
+.x3-form input{flex:1}
+.x3-form button{width:42px;border-radius:10px;background:linear-gradient(120deg,var(--blue),var(--blue2));color:#fff;font-size:16px}
+.x3-typing{display:inline-flex;gap:4px}
+.x3-typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:typ 1s infinite}
+.x3-typing i:nth-child(2){animation-delay:.15s}.x3-typing i:nth-child(3){animation-delay:.3s}
+@keyframes typ{50%{transform:translateY(-4px);opacity:.4}}
+.foot{padding-bottom:130px}
+.x3-go{display:table}
+/* copa */
+.tag.copa{background:rgba(255,200,87,.15);color:#ffd77a}
+.tc-copa{margin-top:8px;font-size:13.5px;color:var(--muted)}
+.tc-copa b{color:#fff}.tc-copa.out b{color:#ffb3c1}.tc-copa.live b{color:#ffd77a}.tc-copa.win b{color:var(--win)}
+.copa-hero{display:flex;align-items:center;gap:14px}
+.copa-hero .trophy{font-size:40px;filter:drop-shadow(0 0 12px rgba(255,200,87,.5))}
+.copa-hero small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.copa-hero b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:30px;text-transform:uppercase;line-height:1.05;margin:2px 0 4px}
+.copa-hero.live b{color:#ffd77a}.copa-hero.out b{color:#ffb3c1}.copa-hero.win b{color:var(--win)}
+.copa-hero .src{font-size:13px}
+.h-sub{font-size:13px;color:var(--muted);font-style:normal;font-weight:600;text-transform:none;letter-spacing:0;margin-left:6px}
+.filters.comp{margin:0 0 12px}
+.subtabs button{font-size:13.5px;padding:10px 4px}
+/* instagram + plantilla */
+.ig{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;font-weight:700;font-size:13.5px;color:#fff;background:linear-gradient(120deg,#7b3fe4,#e1306c 55%,#f7a046);box-shadow:0 4px 16px rgba(225,48,108,.3)}
+.ig.big{padding:10px 18px;font-size:15px}
+.hero-ig{margin-top:14px}
+.squads{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.squad-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
+.squad-h h3{font-size:28px;margin-top:8px}
+.squad-n{text-align:right}
+.squad-n b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:34px;line-height:1;color:var(--cyan)}
+.squad-n small{color:var(--muted);font-size:12px;text-transform:uppercase}
+.squad-grid{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.sp{display:flex;align-items:center;gap:9px;padding:8px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.sp .av{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:"Barlow Condensed";font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan))}
+.sp b{display:block;font-size:13.5px;font-weight:700;line-height:1.2}
+.sp small{color:var(--muted);font-size:11.5px}
+.squad .src{display:inline-block;margin-top:12px;font-size:13.5px}
+.ig-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px}
+.ig-cta b{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:24px;text-transform:uppercase}
+.ig-cta small{color:var(--muted)}
+@media(max-width:360px){.squad-grid{grid-template-columns:1fr}}
+.x3-hint{color:var(--muted);font-size:12px}
+.tbar{min-height:0;justify-content:flex-start}.visits[hidden]{display:none}.tbar:has(.visits[hidden]){padding:0}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script id="logo-data" type="text/plain">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</script>
+<script id="data" type="application/json">{
+ "club": "DMP Pádel",
+ "sede": "Padel Indoor Center (PIC)",
+ "temporada": "2026/27",
+ "actualizado": "13/11/2026",
+ "instagram": "club.dmp",
+ "demo": false,
+ "noticias": [
+  {
+   "titulo": "Derrota ajustada de DMP 6ª en el PIC",
+   "fecha": "2026-11-08",
+   "hora": "12:30",
+   "equipo": "sexta",
+   "rival": "PADELZALEAK PADELKO 6M1",
+   "dmp": 3,
+   "riv": 5,
+   "texto": "El domingo a las 12:30 jugó en el PIC su partido de liga nuestro equipo de 6ª, con derrota por 3-5. ¡Ánimo chavales, a seguir! 💪",
+   "fotos": [
+    "fotos/2026-11-08-1.webp",
+    "fotos/2026-11-08-2.webp"
+   ]
+  }
+ ],
+ "equipos": [
+  {
+   "id": "quinta",
+   "nombre": "DMP",
+   "corto": "5ª",
+   "categoria": "5ª Masculina",
+   "liga": "Liga Bizkaina 26/27 · 5ª Masc. · Grupo 3",
+   "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/34?fase=60&grupoId=55&jornada=1",
+   "clasificacion": [
+    {
+     "equipo": "DMP",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 28,
+     "sc": 6,
+     "pts": 32
+    },
+    {
+     "equipo": "PadelBai ColónMetal",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 26,
+     "sc": 6,
+     "pts": 28
+    },
+    {
+     "equipo": "Picamos B",
+     "pj": 3,
+     "pg": 2,
+     "pp": 1,
+     "sf": 27,
+     "sc": 7,
+     "pts": 28
+    },
+    {
+     "equipo": "CT Begoñalde - Molinillos",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 23,
+     "sc": 9,
+     "pts": 27
+    },
+    {
+     "equipo": "AUSARTA Pic Quinta New",
+     "pj": 3,
+     "pg": 2,
+     "pp": 1,
+     "sf": 19,
+     "sc": 17,
+     "pts": 21
+    },
+    {
+     "equipo": "Torresolo IKEA MENDI",
+     "pj": 3,
+     "pg": 1,
+     "pp": 2,
+     "sf": 20,
+     "sc": 15,
+     "pts": 21
+    },
+    {
+     "equipo": "BTC SUSHI ARTIST",
+     "pj": 3,
+     "pg": 1,
+     "pp": 2,
+     "sf": 12,
+     "sc": 22,
+     "pts": 12
+    },
+    {
+     "equipo": "TORRESOLO ONDIZ",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 8,
+     "sc": 25,
+     "pts": 8
+    },
+    {
+     "equipo": "Laukariz Volea",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 2,
+     "sc": 28,
+     "pts": 2
+    },
+    {
+     "equipo": "Getxo Pádel TZ",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 0,
+     "sc": 30,
+     "pts": 0
+    }
+   ],
+   "partidos": [
+    {
+     "j": 1,
+     "fecha": "2026-09-20",
+     "hora": "16:30",
+     "rival": "Torresolo IKEA MENDI",
+     "lugar": "Visitante",
+     "sede": "Torresolo",
+     "dmp": 8,
+     "riv": 4,
+     "parejas": [
+      {
+       "dmp": "Santos Ladra - Iñigo Setien",
+       "riv": "Enrique Parra - Joseba Novo",
+       "sets": "7-6 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Erik Martinez - Roberto Blanco",
+       "riv": "Ibai Isla - Eduardo Moraleja",
+       "sets": "6-7 6-4 7-6",
+       "g": 1
+      },
+      {
+       "dmp": "Mikel Arizaga - Mikel Reigada",
+       "riv": "Eduardo Javier San Jose - Eneko Garcia",
+       "sets": "2-6 6-4 1-6",
+       "g": 0
+      },
+      {
+       "dmp": "Mikel Osorio - Iker Gonzalez",
+       "riv": "Gorka Martín - Ander Gonzalez",
+       "sets": "6-7 7-6 5-7",
+       "g": 0
+      },
+      {
+       "dmp": "Mikel Fernandez - Jonatan Jimenez",
+       "riv": "Adrian Constante - Imanol Nieto",
+       "sets": "1-6 6-4 6-3",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "fecha": "2026-09-26",
+     "hora": "12:30",
+     "rival": "Getxo Pádel TZ",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": 12,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "Andoni Iñiguez - Erik Martinez",
+       "riv": "Luis Jose Palacio - Jose Maria Prieta",
+       "sets": "6-2 6-3",
+       "g": 1
+      },
+      {
+       "dmp": "Santos Ladra - Mikel Osorio",
+       "riv": "Asier Cabañas - Asier Hermosilla",
+       "sets": "6-0 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Iker Gonzalez - Roberto Blanco",
+       "riv": "Mikel Zuñeda - Garikoitz Zarraga",
+       "sets": "6-0 6-0",
+       "g": 1
+      },
+      {
+       "dmp": "Kepa Diaz - Bruno Calderon",
+       "riv": "Ander Aresti - Jon Rodriguez",
+       "sets": "6-3 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Eñaut Beobide - Urko Garcia",
+       "riv": "Pedro Pablo Roy - Pablo Angel Gutierrez",
+       "sets": "6-3 6-0",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "fecha": "2026-11-08",
+     "hora": "19:30",
+     "rival": "Laukariz Volea",
+     "lugar": "Visitante",
+     "sede": "C.C. Laukariz",
+     "dmp": 12,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "Santos Ladra - Iñigo Setien",
+       "riv": "Mikel Arzoz - Mario Pinacho",
+       "sets": "6-0 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Eneko Gomez - Andoni Iñiguez",
+       "riv": "Roberto Hernando - Unai Baez",
+       "sets": "6-2 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Mikel Osorio - Asier Orbe",
+       "riv": "Carlos Hermosa - Fernando Argüello",
+       "sets": "6-2 6-4",
+       "g": 1
+      },
+      {
+       "dmp": "Kepa Diaz - Pablo Calzado",
+       "riv": "Juan Daniel Tovio - Jose Pau",
+       "sets": "6-1 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Pablo Garcia De Pereda - Jonatan Jimenez",
+       "riv": "Domingo Rojo - Juan Ochagavia",
+       "sets": "6-3 6-4",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "fecha": "2026-11-15",
+     "hora": "12:30",
+     "rival": "AUSARTA Pic Quinta New",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 5,
+     "fecha": "2026-11-21",
+     "hora": "19:00",
+     "rival": "BTC SUSHI ARTIST",
+     "lugar": "Visitante",
+     "sede": "Bilbao Padel Indoor",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 6,
+     "fecha": "2026-11-29",
+     "hora": "17:00",
+     "rival": "PadelBai ColónMetal",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 7,
+     "fecha": "2026-12-20",
+     "hora": "",
+     "rival": "TORRESOLO ONDIZ",
+     "lugar": "Visitante",
+     "sede": "Torresolo",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 8,
+     "fecha": "2026-12-27",
+     "hora": "",
+     "rival": "CT Begoñalde - Molinillos",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 9,
+     "fecha": "2027-01-10",
+     "hora": "",
+     "rival": "Picamos B",
+     "lugar": "Visitante",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 10,
+     "fecha": "2027-01-17",
+     "hora": "",
+     "rival": "Torresolo IKEA MENDI",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 11,
+     "fecha": "2027-01-24",
+     "hora": "",
+     "rival": "Getxo Pádel TZ",
+     "lugar": "Visitante",
+     "sede": "PadelBai",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 12,
+     "fecha": "2027-01-31",
+     "hora": "",
+     "rival": "Laukariz Volea",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 13,
+     "fecha": "2027-02-05",
+     "hora": "21:00",
+     "rival": "AUSARTA Pic Quinta New",
+     "lugar": "Visitante",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 14,
+     "fecha": "2027-02-14",
+     "hora": "",
+     "rival": "BTC SUSHI ARTIST",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 15,
+     "fecha": "2027-02-21",
+     "hora": "",
+     "rival": "PadelBai ColónMetal",
+     "lugar": "Visitante",
+     "sede": "PadelBai",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 16,
+     "fecha": "2027-02-28",
+     "hora": "",
+     "rival": "TORRESOLO ONDIZ",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 17,
+     "fecha": "2027-03-07",
+     "hora": "",
+     "rival": "CT Begoñalde - Molinillos",
+     "lugar": "Visitante",
+     "sede": "Polideportivo San Ignacio Bilbao Kirolak",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 18,
+     "fecha": "2027-03-14",
+     "hora": "",
+     "rival": "Picamos B",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    }
+   ],
+   "jugadores": [
+    {
+     "nombre": "Santos Ladra",
+     "pj": 3,
+     "pg": 3,
+     "sg": 6,
+     "sp": 0,
+     "cpj": 3,
+     "cpg": 2,
+     "csg": 4,
+     "csp": 2
+    },
+    {
+     "nombre": "Iñigo Setien",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 0,
+     "cpj": 2,
+     "cpg": 2,
+     "csg": 4,
+     "csp": 0
+    },
+    {
+     "nombre": "Erik Martinez",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 3,
+     "cpg": 3,
+     "csg": 6,
+     "csp": 0
+    },
+    {
+     "nombre": "Roberto Blanco",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 3,
+     "cpg": 3,
+     "csg": 6,
+     "csp": 0
+    },
+    {
+     "nombre": "Mikel Arizaga",
+     "pj": 1,
+     "pg": 0,
+     "sg": 1,
+     "sp": 2,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Mikel Reigada",
+     "pj": 1,
+     "pg": 0,
+     "sg": 1,
+     "sp": 2,
+     "cpj": 2,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 2
+    },
+    {
+     "nombre": "Mikel Osorio",
+     "pj": 3,
+     "pg": 2,
+     "sg": 5,
+     "sp": 2,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Iker Gonzalez",
+     "pj": 2,
+     "pg": 1,
+     "sg": 3,
+     "sp": 2,
+     "cpj": 2,
+     "cpg": 2,
+     "csg": 4,
+     "csp": 0
+    },
+    {
+     "nombre": "Mikel Fernandez",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Jonatan Jimenez",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Andoni Iñiguez",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 0,
+     "cpj": 3,
+     "cpg": 3,
+     "csg": 6,
+     "csp": 0
+    },
+    {
+     "nombre": "Kepa Diaz",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Bruno Calderon",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Eñaut Beobide",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 1,
+     "csp": 2
+    },
+    {
+     "nombre": "Urko Garcia",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Eneko Gomez",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 2,
+     "cpg": 2,
+     "csg": 4,
+     "csp": 1
+    },
+    {
+     "nombre": "Asier Orbe",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 1
+    },
+    {
+     "nombre": "Pablo Calzado",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Pablo Garcia De Pereda",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 2,
+     "cpg": 1,
+     "csg": 3,
+     "csp": 2
+    },
+    {
+     "nombre": "Iker Aguirre",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Jorge Marcos",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    }
+   ],
+   "copa": {
+    "nombre": "Kopa 5ª Masculina 2026",
+    "fuente": "https://www.bizkaiapadel.com/Home/CuadroLiga?faseId=271",
+    "partidos": [
+     {
+      "ronda": "Dieciseisavos de final",
+      "fecha": "2026-10-04",
+      "hora": "17:00",
+      "rival": "Picamos B",
+      "lugar": "Local",
+      "sede": "BamVolea PIC",
+      "dmp": 10,
+      "riv": 2,
+      "parejas": [
+       {
+        "dmp": "Andoni Iñiguez - Erik Martinez",
+        "riv": "Imanol Castillo - Marcos Madina",
+        "sets": "7-6 6-4",
+        "g": 1
+       },
+       {
+        "dmp": "Iker Gonzalez - Roberto Blanco",
+        "riv": "Ander Astorga - Saul Gutierrez",
+        "sets": "6-1 6-2",
+        "g": 1
+       },
+       {
+        "dmp": "Iker Aguirre - Santos Ladra",
+        "riv": "Jonathan Herrera - Ibai Viña",
+        "sets": "7-5 7-6",
+        "g": 1
+       },
+       {
+        "dmp": "Eñaut Beobide - Pablo Garcia De Pereda",
+        "riv": "Joseba Serrano - Aritz Urquiza",
+        "sets": "6-0 5-7 1-6",
+        "g": 0
+       },
+       {
+        "dmp": "Mikel Arizaga - Mikel Reigada",
+        "riv": "Eder Hernandez - Imanol Sierra",
+        "sets": "6-2 6-4",
+        "g": 1
+       }
+      ]
+     },
+     {
+      "ronda": "Octavos de final",
+      "fecha": "2026-10-25",
+      "hora": "14:00",
+      "rival": "CT BEGOÑALDE 5M",
+      "lugar": "Visitante",
+      "sede": "Polideportivo San Ignacio Bilbao Kirolak",
+      "dmp": 12,
+      "riv": 0,
+      "parejas": [
+       {
+        "dmp": "Santos Ladra - Iñigo Setien",
+        "riv": "Hugo Valle - Arkaitz De Larrañaga",
+        "sets": "6-1 6-2",
+        "g": 1
+       },
+       {
+        "dmp": "Erik Martinez - Roberto Blanco",
+        "riv": "Gonzalo Aranguren - Stepan Potapov",
+        "sets": "6-1 6-1",
+        "g": 1
+       },
+       {
+        "dmp": "Andoni Iñiguez - Eneko Gomez",
+        "riv": "Alvaro Fragoso - Mikel Larrinaga",
+        "sets": "6-2 6-4",
+        "g": 1
+       },
+       {
+        "dmp": "Jorge Marcos - Bruno Calderon",
+        "riv": "Diego González - Ignacio Casado",
+        "sets": "7-6 6-2",
+        "g": 1
+       },
+       {
+        "dmp": "Pablo Calzado - Pablo Garcia De Pereda",
+        "riv": "Damian Alejandro Knopoff - Jon Ander Carrasco",
+        "sets": "6-0 6-0",
+        "g": 1
+       }
+      ]
+     },
+     {
+      "ronda": "Cuartos de final",
+      "fecha": "2026-11-06",
+      "hora": "21:30",
+      "rival": "Ausarta Pic QUINTA",
+      "lugar": "Visitante",
+      "sede": "BamVolea PIC",
+      "dmp": 10,
+      "riv": 2,
+      "parejas": [
+       {
+        "dmp": "Andoni Iñiguez - Iñigo Setien",
+        "riv": "Alejandro Amaro - Jose Luis Gomez",
+        "sets": "6-2 6-3",
+        "g": 1
+       },
+       {
+        "dmp": "Erik Martinez - Roberto Blanco",
+        "riv": "Iker Gonzalez - Alberto Cea",
+        "sets": "6-2 7-6",
+        "g": 1
+       },
+       {
+        "dmp": "Mikel Reigada - Santos Ladra",
+        "riv": "Leoncio Laza - Carlos Martinez",
+        "sets": "6-7 5-7",
+        "g": 0
+       },
+       {
+        "dmp": "Asier Orbe - Eneko Gomez",
+        "riv": "Jeronimo Algar - Julen Oregi",
+        "sets": "1-6 6-2 7-5",
+        "g": 1
+       },
+       {
+        "dmp": "Mikel Osorio - Iker Gonzalez",
+        "riv": "Oier Atxalandabaso - Javier Nuñez",
+        "sets": "6-2 6-2",
+        "g": 1
+       }
+      ]
+     },
+     {
+      "ronda": "Semifinales",
+      "fecha": "2026-12-12",
+      "hora": "17:30",
+      "rival": "Gernikaland",
+      "lugar": "Local",
+      "sede": "Bilbao Padel Indoor",
+      "dmp": "",
+      "riv": "",
+      "parejas": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "sexta",
+   "nombre": "DMP Academy",
+   "corto": "6ª",
+   "categoria": "6ª Masculina",
+   "liga": "Liga Bizkaina 26/27 · 6ª Masc. · Grupo 1",
+   "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/35?fase=61&grupoId=62&jornada=1",
+   "clasificacion": [
+    {
+     "equipo": "PADELZALEAK PADELKO 6M1",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 17,
+     "sc": 2,
+     "pts": 21
+    },
+    {
+     "equipo": "RC JOLASETA CAÑEROS",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 16,
+     "sc": 3,
+     "pts": 21
+    },
+    {
+     "equipo": "DMP Academy",
+     "pj": 3,
+     "pg": 2,
+     "pp": 1,
+     "sf": 14,
+     "sc": 8,
+     "pts": 19
+    },
+    {
+     "equipo": "Leioa Pádel Club",
+     "pj": 3,
+     "pg": 2,
+     "pp": 1,
+     "sf": 14,
+     "sc": 6,
+     "pts": 16
+    },
+    {
+     "equipo": "6 ENKARTERRI PADEL KLUBA",
+     "pj": 3,
+     "pg": 2,
+     "pp": 1,
+     "sf": 13,
+     "sc": 7,
+     "pts": 16
+    },
+    {
+     "equipo": "SEMINARIO PADEL CLUB DERIO M6",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 2,
+     "sc": 17,
+     "pts": 3
+    },
+    {
+     "equipo": "BTC UGAO INSTALACIONES",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 3,
+     "sc": 18,
+     "pts": 0
+    },
+    {
+     "equipo": "PADELZALEAK PADELKO 6M2",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 0,
+     "sc": 18,
+     "pts": 0
+    }
+   ],
+   "partidos": [
+    {
+     "j": 1,
+     "fecha": "2026-09-26",
+     "hora": "17:30",
+     "rival": "BTC UGAO INSTALACIONES",
+     "lugar": "Visitante",
+     "sede": "Bilbao Padel Indoor",
+     "dmp": 8,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "Luis Alfageme - David Gonzalez",
+       "riv": "Harriet Núñez - Gorka Gonzalez",
+       "sets": "6-2 3-6 7-6",
+       "g": 1
+      },
+      {
+       "dmp": "Andoni Esteban - Roberto Hernando",
+       "riv": "Emmanuel Pierre - Asier Lopez",
+       "sets": "4-6 6-4 6-1",
+       "g": 1
+      },
+      {
+       "dmp": "Unai Caballero - Esteban Estivill",
+       "riv": "David Carro - Borja Castañares",
+       "sets": "4-6 6-2 7-5",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "fecha": "2026-10-04",
+     "hora": "12:30",
+     "rival": "PADELZALEAK PADELKO 6M2",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": 8,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "Asier Cedrun - Gorka Ayala",
+       "riv": "Eneko Ochoa - Xabier Parada",
+       "sets": "6-1 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Iñigo Jauregui - Lander Mateos",
+       "riv": "Aimar Yurrebaso - Aimar Unzueta",
+       "sets": "6-2 6-0",
+       "g": 1
+      },
+      {
+       "dmp": "David Sanz - Ander Diaz",
+       "riv": "Kristian Barreto - Iñaki Txarterina",
+       "sets": "6-3 7-6",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "fecha": "2026-11-08",
+     "hora": "12:30",
+     "rival": "PADELZALEAK PADELKO 6M1",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": 3,
+     "riv": 5,
+     "parejas": [
+      {
+       "dmp": "Gorka Ayala - David Gonzalez",
+       "riv": "Iñigo Uribarri - Lander Arrizabalaga",
+       "sets": "3-6 6-3 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Jorge Negro - Esteban Estivill",
+       "riv": "Iñigo Lopez - Adrian Demidov",
+       "sets": "1-6 2-6",
+       "g": 0
+      },
+      {
+       "dmp": "Andoni Esteban - Javier Herreros",
+       "riv": "Iñigo Uria - Edgar San Millan",
+       "sets": "2-6 3-6",
+       "g": 0
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "fecha": "2026-11-14",
+     "hora": "18:30",
+     "rival": "RC JOLASETA CAÑEROS",
+     "lugar": "Visitante",
+     "sede": "R.C. Jolaseta",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 5,
+     "fecha": "2026-11-22",
+     "hora": "12:30",
+     "rival": "6 ENKARTERRI PADEL KLUBA",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 6,
+     "fecha": "2026-11-29",
+     "hora": "",
+     "rival": "Leioa Pádel Club",
+     "lugar": "Visitante",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 7,
+     "fecha": "2026-12-20",
+     "hora": "",
+     "rival": "SEMINARIO PADEL CLUB DERIO M6",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    }
+   ],
+   "jugadores": [
+    {
+     "nombre": "Luis Alfageme",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "David Gonzalez",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 2,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Andoni Esteban",
+     "pj": 2,
+     "pg": 1,
+     "sg": 2,
+     "sp": 3,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Roberto Hernando",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Unai Caballero",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 1,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Esteban Estivill",
+     "pj": 2,
+     "pg": 1,
+     "sg": 2,
+     "sp": 3,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Asier Cedrun",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Gorka Ayala",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Iñigo Jauregui",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 2,
+     "cpg": 0,
+     "csg": 1,
+     "csp": 4
+    },
+    {
+     "nombre": "Lander Mateos",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "David Sanz",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Ander Diaz",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Jorge Negro",
+     "pj": 1,
+     "pg": 0,
+     "sg": 0,
+     "sp": 2,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Javier Herreros",
+     "pj": 1,
+     "pg": 0,
+     "sg": 0,
+     "sp": 2,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 1,
+     "csp": 2
+    },
+    {
+     "nombre": "Jose Luis Bezanilla",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 2,
+     "cpg": 2,
+     "csg": 4,
+     "csp": 0
+    },
+    {
+     "nombre": "Xabier Diaz",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 1,
+     "csg": 2,
+     "csp": 0
+    },
+    {
+     "nombre": "Borja Arrieta",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 2,
+     "cpg": 2,
+     "csg": 4,
+     "csp": 0
+    }
+   ],
+   "copa": {
+    "nombre": "Kopa 6ª Masculina 2026",
+    "fuente": "https://www.bizkaiapadel.com/Home/CuadroLiga?faseId=276",
+    "partidos": [
+     {
+      "ronda": "Octavos de final",
+      "fecha": "2026-10-25",
+      "hora": "16:00",
+      "rival": "BTC UGAO INSTALACIONES",
+      "lugar": "Visitante",
+      "sede": "Bilbao Padel Indoor",
+      "dmp": 5,
+      "riv": 3,
+      "parejas": [
+       {
+        "dmp": "Unai Caballero - Iñigo Jauregui",
+        "riv": "Gorka Gonzalez - Sorin Iuga",
+        "sets": "4-6 5-7",
+        "g": 0
+       },
+       {
+        "dmp": "Jorge Negro - Jose Luis Bezanilla",
+        "riv": "Asier Lopez - Sergio Coello",
+        "sets": "6-0 6-0",
+        "g": 1
+       },
+       {
+        "dmp": "Xabier Diaz - Borja Arrieta",
+        "riv": "David Carro - Ander Agirregabiria",
+        "sets": "6-1 6-4",
+        "g": 1
+       }
+      ]
+     },
+     {
+      "ronda": "Cuartos de final",
+      "fecha": "2026-11-01",
+      "hora": "18:00",
+      "rival": "Leioa Pádel Club",
+      "lugar": "Visitante",
+      "sede": "BamVolea PIC",
+      "dmp": 2,
+      "riv": 6,
+      "parejas": [
+       {
+        "dmp": "Gorka Ayala - David Gonzalez",
+        "riv": "Ander Prieto - Jurgi Rey",
+        "sets": "2-6 1-6",
+        "g": 0
+       },
+       {
+        "dmp": "Iñigo Jauregui - Javier Herreros",
+        "riv": "Aitor Jimenez - Miguel Cayon",
+        "sets": "3-6 6-4 3-6",
+        "g": 0
+       },
+       {
+        "dmp": "Jose Luis Bezanilla - Borja Arrieta",
+        "riv": "Alain Pascual - Sendoa Dorado",
+        "sets": "7-6 6-3",
+        "g": 1
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "femenino",
+   "nombre": "DMP Valkyrias PIC",
+   "corto": "Chicas 6ª",
+   "categoria": "6ª Femenina",
+   "liga": "Liga Bizkaina 26/27 · 6ª Fem. · Grupo 1",
+   "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/41?fase=67&grupoId=64&jornada=1",
+   "clasificacion": [
+    {
+     "equipo": "DMP Valkyrias PIC",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 17,
+     "sc": 4,
+     "pts": 22
+    },
+    {
+     "equipo": "Btc Bordado Express",
+     "pj": 3,
+     "pg": 3,
+     "pp": 0,
+     "sf": 15,
+     "sc": 6,
+     "pts": 18
+    },
+    {
+     "equipo": "PADEL ZAMUDIO W6",
+     "pj": 3,
+     "pg": 2,
+     "pp": 1,
+     "sf": 13,
+     "sc": 8,
+     "pts": 15
+    },
+    {
+     "equipo": "Biwak + Lobbers",
+     "pj": 3,
+     "pg": 1,
+     "pp": 2,
+     "sf": 10,
+     "sc": 11,
+     "pts": 11
+    },
+    {
+     "equipo": "SEMINARIO PADEL CLUB DERIO F6-1",
+     "pj": 3,
+     "pg": 1,
+     "pp": 2,
+     "sf": 8,
+     "sc": 13,
+     "pts": 9
+    },
+    {
+     "equipo": "Laukariz x4",
+     "pj": 3,
+     "pg": 1,
+     "pp": 2,
+     "sf": 9,
+     "sc": 13,
+     "pts": 8
+    },
+    {
+     "equipo": "CT BEGOÑALDE 6F",
+     "pj": 3,
+     "pg": 1,
+     "pp": 2,
+     "sf": 6,
+     "sc": 13,
+     "pts": 8
+    },
+    {
+     "equipo": "NESKAK ENKARTERRI PADEL KLUBA",
+     "pj": 3,
+     "pg": 0,
+     "pp": 3,
+     "sf": 5,
+     "sc": 15,
+     "pts": 5
+    }
+   ],
+   "partidos": [
+    {
+     "j": 1,
+     "fecha": "2026-09-27",
+     "hora": "13:00",
+     "rival": "CT BEGOÑALDE 6F",
+     "lugar": "Visitante",
+     "sede": "Polideportivo San Ignacio Bilbao Kirolak",
+     "dmp": 8,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "M Esther Lopez - Laura Gomez",
+       "riv": "Irati Garcia - Katalin Iturrioz",
+       "sets": "6-3 6-4",
+       "g": 1
+      },
+      {
+       "dmp": "Iciar Perez - Maider Rojo",
+       "riv": "Edurne Perez - Gema Laucirica",
+       "sets": "6-3 6-4",
+       "g": 1
+      },
+      {
+       "dmp": "Marta Maestro - Marta Garate",
+       "riv": "Leire Iturburu - Isabel Gorriti",
+       "sets": "6-1 6-2",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "fecha": "2026-10-04",
+     "hora": "18:00",
+     "rival": "PADEL ZAMUDIO W6",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": 6,
+     "riv": 2,
+     "parejas": [
+      {
+       "dmp": "Kiara Granados - Ainara Unamuno",
+       "riv": "Lidia Ortiz De Zárate - Garbiñe Para",
+       "sets": "6-3 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Izaskun Cuesta - Sandra Bibiana Montoya",
+       "riv": "Naroa Uriarte - Mariana Barrón",
+       "sets": "3-6 6-3 6-3",
+       "g": 1
+      },
+      {
+       "dmp": "Ariane Garcia - Ainhoa Cobo",
+       "riv": "Meritxell Pascual - Valeroa Muñoz",
+       "sets": "6-4 3-6 6-7",
+       "g": 0
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "fecha": "2026-11-07",
+     "hora": "12:30",
+     "rival": "Laukariz x4",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": 8,
+     "riv": 0,
+     "parejas": [
+      {
+       "dmp": "Ainara Unamuno - Kiara Granados",
+       "riv": "Virghinia Smetanca - Igone Del Cid",
+       "sets": "6-3 6-3",
+       "g": 1
+      },
+      {
+       "dmp": "Laura Gomez - M Esther Lopez",
+       "riv": "Nagore Uriarte - Olatz Martinez",
+       "sets": "6-1 6-7 6-2",
+       "g": 1
+      },
+      {
+       "dmp": "Sandra Bibiana Montoya - Marta Garate",
+       "riv": "Teresa Sarralde - Lucia Eugenia Herrero",
+       "sets": "6-3 6-1",
+       "g": 1
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "fecha": "2026-11-14",
+     "hora": "12:00",
+     "rival": "Btc Bordado Express",
+     "lugar": "Visitante",
+     "sede": "Bilbao Padel Indoor",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 5,
+     "fecha": "2026-11-22",
+     "hora": "16:30",
+     "rival": "NESKAK ENKARTERRI PADEL KLUBA",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 6,
+     "fecha": "2026-11-28",
+     "hora": "12:00",
+     "rival": "Biwak + Lobbers",
+     "lugar": "Visitante",
+     "sede": "Biwak",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    },
+    {
+     "j": 7,
+     "fecha": "2026-12-18",
+     "hora": "",
+     "rival": "SEMINARIO PADEL CLUB DERIO F6-1",
+     "lugar": "Local",
+     "sede": "BamVolea PIC",
+     "dmp": "",
+     "riv": "",
+     "parejas": []
+    }
+   ],
+   "jugadores": [
+    {
+     "nombre": "M Esther Lopez",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Laura Gomez",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Iciar Perez",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Maider Rojo",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Marta Maestro",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Marta Garate",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Kiara Granados",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 0,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Ainara Unamuno",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Izaskun Cuesta",
+     "pj": 1,
+     "pg": 1,
+     "sg": 2,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Sandra Bibiana Montoya",
+     "pj": 2,
+     "pg": 2,
+     "sg": 4,
+     "sp": 1,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Ariane Garcia",
+     "pj": 1,
+     "pg": 0,
+     "sg": 1,
+     "sp": 2,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Ainhoa Cobo",
+     "pj": 1,
+     "pg": 0,
+     "sg": 1,
+     "sp": 2,
+     "cpj": 0,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 0
+    },
+    {
+     "nombre": "Miren Garcia",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Paula Sánchez",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    },
+    {
+     "nombre": "Maria Puig",
+     "pj": 0,
+     "pg": 0,
+     "sg": 0,
+     "sp": 0,
+     "cpj": 1,
+     "cpg": 0,
+     "csg": 0,
+     "csp": 2
+    }
+   ],
+   "copa": {
+    "nombre": "Kopa 6ª Femenina 2026",
+    "fuente": "https://www.bizkaiapadel.com/Home/CuadroLiga?faseId=281",
+    "partidos": [
+     {
+      "ronda": "Octavos de final",
+      "fecha": "2026-10-25",
+      "hora": "17:30",
+      "rival": "Gernikaland_FEM",
+      "lugar": "Visitante",
+      "sede": "Bilbao Padel Indoor",
+      "dmp": 0,
+      "riv": 8,
+      "parejas": [
+       {
+        "dmp": "Laura Gomez - Ainara Unamuno",
+        "riv": "Bihotza Learreta - Jasone Ojenbarrena",
+        "sets": "2-6 2-6",
+        "g": 0
+       },
+       {
+        "dmp": "Miren Garcia - Marta Maestro",
+        "riv": "Joana Aldazabal - Iratxe Amezua",
+        "sets": "0-6 1-6",
+        "g": 0
+       },
+       {
+        "dmp": "Paula Sánchez - Maria Puig",
+        "riv": "Yolanda Pardo - Nicole Mercado",
+        "sets": "4-6 2-6",
+        "g": 0
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}</script>
+<script id="app-js">(function(){
+"use strict";
+var HEAD='<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>DMP Pádel · Resultados y clasificaciones</title>\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">\n';
+var DATA=JSON.parse(document.getElementById('data').textContent);
+var LOGO='data:image/webp;base64,'+document.getElementById('logo-data').textContent.trim();
+var root=document.getElementById('root');
+var IN_CLAUDE=!!(window.claude&&window.claude.use);
+var edit=null, sub='clasificacion', rankFilter='all', artifactNS=null, clearArmed=false;
+/* ---------- contador de visitas (servicio gratuito Abacus; si falla, no se muestra) ---------- */
+var VISITS=null;
+(function(){
+  if(IN_CLAUDE||!/^https?:$/.test(location.protocol))return;
+  var base='https://abacus.jasoncameron.dev/',k='dmp-padel-github-io/visitas',seen=false;
+  try{seen=sessionStorage.getItem('dmp_v')==='1';}catch(e){}
+  try{
+    fetch(base+(seen?'get/':'hit/')+k).then(function(r){return r.ok?r.json():null;}).then(function(j){
+      if(j&&typeof j.value==='number'){VISITS=j.value;try{sessionStorage.setItem('dmp_v','1');}catch(e){}
+        var el=document.querySelector('.visits');if(el){el.hidden=false;el.querySelector('b').textContent=VISITS.toLocaleString('es-ES');}}
+    }).catch(function(){});
+  }catch(e){}
+})();
+var toastEl=document.createElement('div');toastEl.id='toast';document.body.appendChild(toastEl);
+try{ if(window.claude&&window.claude.use){ window.claude.use('artifact').then(function(a){artifactNS=a;}).catch(function(){}); } }catch(e){}
+
+var NUMK={pj:1,pg:1,pp:1,sf:1,sc:1,pts:1,j:1,dmp:1,riv:1,sg:1,sp:1};
+var TPL={
+  clasificacion:{equipo:'',pj:0,pg:0,pp:0,sf:0,sc:0,pts:0},
+  partidos:{j:'',fecha:'',rival:'',lugar:'Local',dmp:'',riv:''},
+  jugadores:{nombre:'',pj:0,pg:0,sg:0,sp:0}
+};
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function num(v){var n=parseInt(v,10);return isNaN(n)?0:n;}
+function played(p){return p.dmp!==''&&p.dmp!=null&&p.riv!==''&&p.riv!=null;}
+function outcome(p){if(!played(p))return null;var a=num(p.dmp),b=num(p.riv);return a>b?'V':a<b?'D':'E';}
+function byJ(a,b){return (num(a.j)-num(b.j))||String(a.fecha).localeCompare(String(b.fecha));}
+function byDate(a,b){return String(a.p.fecha).localeCompare(String(b.p.fecha))||(num(a.p.j)-num(b.p.j));}
+function isUs(r,t){return String(r.equipo).trim().toLowerCase()===String(t.nombre).trim().toLowerCase();}
+function sortedTable(t){return t.clasificacion.slice().sort(function(a,b){return num(b.pts)-num(a.pts)||((num(b.sf)-num(b.sc))-(num(a.sf)-num(a.sc)))||num(b.pg)-num(a.pg);});}
+function fmtDate(s){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');if(!m)return esc(s||'Fecha por definir');var d=new Date(+m[1],+m[2]-1,+m[3]);try{return d.toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});}catch(e){return esc(s);}}
+var compFilter='total';
+function pstat(p,mode){mode=mode||compFilter;var L=[num(p.pj),num(p.pg),num(p.sg),num(p.sp)],C=[num(p.cpj),num(p.cpg),num(p.csg),num(p.csp)];
+  var v=mode==='liga'?L:mode==='copa'?C:[L[0]+C[0],L[1]+C[1],L[2]+C[2],L[3]+C[3]];
+  return {nombre:p.nombre,pj:v[0],pg:v[1],pp:Math.max(0,v[0]-v[1]),dif:v[2]-v[3],sg:v[2],sp:v[3],pct:v[0]?Math.round(v[1]*100/v[0]):0};}
+var RONDAS=['Treintaidosavos de final','Dieciseisavos de final','Octavos de final','Cuartos de final','Semifinales','Final'];
+function rIdx(r){var i=RONDAS.indexOf(r);return i<0?99:i;}
+function byRonda(a,b){return rIdx(a.ronda)-rIdx(b.ronda)||String(a.fecha).localeCompare(String(b.fecha));}
+function rondaCorta(r){return String(r||'').replace(/ de final$/,'');}
+function copaPartidos(t){return (t.copa&&t.copa.partidos)||[];}
+function allMatchesOf(t){return t.partidos.concat(copaPartidos(t));}
+function copaEstado(t){
+  var ps=copaPartidos(t).slice().sort(byRonda);if(!ps.length)return null;
+  var fem=/femen/i.test(t.categoria),jug=ps.filter(played),pend=ps.filter(function(p){return !played(p);}),last=jug[jug.length-1];
+  var low=function(r){return r==='Final'?'la final':String(r).toLowerCase();};
+  if(last&&last.ronda==='Final')return outcome(last)==='V'?{txt:'¡'+(fem?'Campeonas':'Campeones')+'!',cls:'win'}:{txt:(fem?'Subcampeonas':'Subcampeones'),cls:'win'};
+  if(last&&outcome(last)==='D')return {txt:(fem?'Eliminadas':'Eliminados')+' en '+low(last.ronda),cls:'out'};
+  if(pend.length)return {txt:pend[0].ronda==='Final'?'¡En la final!':'En '+low(pend[0].ronda),cls:'live'};
+  return {txt:'En competición',cls:'live'};
+}
+function rankSort(a,b){return (b.pj>0)-(a.pj>0)||b.pct-a.pct||b.pg-a.pg||b.pj-a.pj||b.dif-a.dif;}
+
+function teamStats(t){
+  var tab=sortedTable(t),idx=-1;
+  for(var i=0;i<tab.length;i++){if(isUs(tab[i],t)){idx=i;break;}}
+  var jug=t.partidos.filter(played).sort(byJ);
+  var v=jug.filter(function(p){return outcome(p)==='V';}).length;
+  var d=jug.filter(function(p){return outcome(p)==='D';}).length;
+  var pend=t.partidos.filter(function(p){return !played(p);}).sort(byJ);
+  return {pos:idx>=0?idx+1:null,total:tab.length,row:idx>=0?tab[idx]:null,jug:jug.length,v:v,d:d,
+    pct:jug.length?Math.round(v*100/jug.length):0,forma:jug.slice(-5).map(outcome),prox:pend[0]||null};
+}
+function formaDots(f){var h='';for(var i=0;i<5;i++){var o=f[i];h+='<span class="dot '+(o||'n')+'">'+(o||'')+'</span>';}return h;}
+
+function getPath(o,path){var ps=path.split('.');for(var i=0;i<ps.length;i++){o=o[ps[i]];}return o;}
+function setPath(o,path,v){var ps=path.split('.'),k=ps.pop();getPath(o,ps.join('.'))[k]=v;}
+function toast(msg,ms){toastEl.textContent=msg;toastEl.className='on';clearTimeout(toast._t);toast._t=setTimeout(function(){toastEl.className='';},ms||3200);}
+
+function views(D){return ['inicio','noticias'].concat(D.equipos.map(function(t){return t.id;}),['plantilla','ranking']);}
+function view(D){var h=location.hash.slice(1);return views(D).indexOf(h)>=0?h:'inicio';}
+
+/* ---------- render ---------- */
+function render(){
+  var D=edit||DATA, v=view(D), body;
+  if(v==='inicio') body=edit?editClub(D):viewInicio(D);
+  else if(v==='ranking') body=viewRanking(D);
+  else if(v==='noticias') body=edit?editNews(D):viewNews(D);
+  else if(v==='plantilla') body=viewPlantilla(D);
+  else { var ti=D.equipos.findIndex(function(t){return t.id===v;}); body=edit?editTeam(D.equipos[ti],ti):viewTeam(D.equipos[ti]); }
+  root.innerHTML=header(D,v)+'<main class="wrap">'+(D.actualizado&&!edit&&!D.demo?'<div class="upd">Datos de la <a href="https://www.bizkaiapadel.com/Home/Liga" target="_blank" rel="noopener">Federación Bizkaina de Pádel</a> · actualizado '+esc(D.actualizado)+'</div>':'')+(D.demo&&!edit?'<div class="demo">⚠️ Las clasificaciones, partidos y jugadores son <b>datos de ejemplo</b> para ver cómo queda la web. Pulsa <b>Editar</b> (abajo) para poner los resultados reales.</div>':'')+body+'</main>'+footer(D)+(edit?editBar():'');
+}
+
+function header(D,v){
+  var items=[['inicio','Inicio'],['noticias','Noticias']].concat(D.equipos.map(function(t){return [t.id,t.corto||t.nombre];}),[['plantilla','Plantilla'],['ranking','Ranking']]);
+  return '<header class="top"><div class="tbar"><span class="visits" title="Visitas a la web"'+(VISITS==null?' hidden':'')+'><i class="vdot"></i><b>'+(VISITS==null?'':VISITS.toLocaleString('es-ES'))+'</b> visitas</span></div><div class="top-in"><a class="brand" href="#inicio"><img src="'+LOGO+'" alt="Logo DMP"><span><b>'+esc(D.club)+'</b><small>'+esc(D.sede)+'</small></span></a><nav class="nav">'+
+    items.map(function(it){return '<a href="#'+it[0]+'" class="'+(v===it[0]?'on':'')+'">'+esc(it[1])+'</a>';}).join('')+'</nav></div></header>';
+}
+function igUrl(D){return D.instagram?'https://www.instagram.com/'+String(D.instagram).replace(/^@/,'')+'/':'';}
+var IG_ICON='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+function igBtn(D,big){var u=igUrl(D);return u?'<a class="ig'+(big?' big':'')+'" href="'+u+'" target="_blank" rel="noopener">'+IG_ICON+'<span>@'+esc(String(D.instagram).replace(/^@/,''))+'</span></a>':'';}
+function footer(D){
+  return '<footer class="foot"><span>'+esc(D.club)+' · '+esc(D.sede)+' · Temporada '+esc(D.temporada)+'</span>'+igBtn(D)+(edit||!IN_CLAUDE?'':'<button class="btn" data-act="edit">✎ Editar</button>')+'</footer>';
+}
+function secH(title,link){return '<div class="sec-h"><h2>'+title+'</h2>'+(link||'')+'</div>';}
+
+function matchRow(p,t,showTeam,detail){
+  var o=outcome(p);
+  return '<div class="match '+(o?'m-'+o:'')+'"><div class="m-meta">'+(p.ronda?'<span class="j">'+esc(rondaCorta(p.ronda))+'</span><span class="tag copa">🏆 Copa</span>':'<span class="j">J'+esc(p.j)+'</span>')+'<span>'+fmtDate(p.fecha)+'</span>'+(showTeam?'<span class="tag">'+esc(t.corto||t.nombre)+'</span>':'')+(p.hora?'<span>'+esc(p.hora)+'</span>':'')+'<span>· '+esc(p.lugar)+(p.sede?' · '+esc(p.sede):'')+'</span></div>'+
+  '<div class="m-body"><span class="m-team us">'+esc(t.nombre)+'</span>'+(o?'<span class="m-score">'+num(p.dmp)+'<i>–</i>'+num(p.riv)+'</span>':'<span class="m-score vs">VS</span>')+'<span class="m-team">'+esc(p.rival)+'</span></div>'+
+  (detail&&p.parejas&&p.parejas.length?'<div class="prs">'+p.parejas.map(function(x){return '<div class="pr '+(x.g?'w':'l')+'"><span class="pr-r">'+(x.g?'✓':'✗')+'</span><div><b>'+esc(x.dmp)+'</b><small>vs '+esc(x.riv)+'</small></div><span class="pr-s">'+esc(x.sets)+'</span></div>';}).join('')+'</div>':'')+
+  '<div class="m-foot">'+(o?'<span class="badge b-'+o+'">'+(o==='V'?'Victoria':o==='D'?'Derrota':'Empate')+'</span>':'<span class="badge b-P">Pendiente</span>')+'</div></div>';
+}
+
+function teamCard(t){
+  var s=teamStats(t);
+  return '<a class="card tcard" href="#'+esc(t.id)+'"><div class="tc-top"><span class="chip">'+esc(t.categoria)+'</span><span class="tc-liga">'+esc(t.liga)+'</span></div><h3>'+esc(t.nombre)+'</h3>'+
+  '<div class="tc-main"><div class="pos"><b>'+(s.pos?s.pos+'º':'–')+'</b><small>'+(s.total?'de '+s.total+' equipos':'Sin clasificación')+'</small></div><div class="tc-kpis"><div><b>'+(s.row?num(s.row.pts):'–')+'</b><small>Puntos</small></div><div><b>'+s.v+'/'+s.jug+'</b><small>Victorias</small></div></div></div>'+
+  '<div class="forma"><span class="lbl">Forma</span>'+formaDots(s.forma)+'</div>'+
+  '<div class="tc-next">'+(s.prox?'Próximo · J'+esc(s.prox.j)+' vs <b>'+esc(s.prox.rival)+'</b> · '+fmtDate(s.prox.fecha):'Sin partidos pendientes')+'</div>'+(copaEstado(t)?'<div class="tc-copa '+copaEstado(t).cls+'">🏆 Copa · <b>'+esc(copaEstado(t).txt)+'</b></div>':'')+'</a>';
+}
+
+function allPlayers(D,mode){
+  var out=[];D.equipos.forEach(function(t){t.jugadores.forEach(function(p){var s=pstat(p,mode);s.team=t;if(s.pj>0||(mode||compFilter)==='total')out.push(s);});});
+  return out.sort(rankSort);
+}
+
+function viewInicio(D){
+  var nj=0,np=0,all=[];
+  D.equipos.forEach(function(t){nj+=t.jugadores.length;allMatchesOf(t).forEach(function(p){all.push({p:p,t:t});if(played(p))np++;});});
+  var rec=all.filter(function(x){return played(x.p);}).sort(byDate).reverse().slice(0,6);
+  var up=all.filter(function(x){return !played(x.p);}).sort(byDate).slice(0,6);
+  var top=allPlayers(D,'total').filter(function(p){return p.pj>0;}).slice(0,5);
+  return '<section class="hero"><div class="logo-wrap"><img src="'+LOGO+'" alt="Logo DMP"></div><h1>'+esc(D.club)+'</h1><p>'+esc(D.sede)+' · Temporada '+esc(D.temporada)+'</p>'+
+    (igUrl(D)?'<div class="hero-ig">'+igBtn(D,true)+'</div>':'')+'<div class="stats"><div class="stat"><b>'+D.equipos.length+'</b><small>Equipos</small></div><div class="stat"><b>'+nj+'</b><small>Jugadores</small></div><div class="stat"><b>'+np+'</b><small>Partidos</small></div></div></section>'+
+    (news(D).length?'<section class="sec">'+secH('Última hora','<a href="#noticias">Todas las noticias →</a>')+'<div class="news-list">'+news(D).slice(0,2).map(function(n){return newsCard(D,n,true);}).join('')+'</div></section>':'')+
+    '<section class="sec">'+secH('Nuestros equipos')+'<div class="grid">'+D.equipos.map(teamCard).join('')+'</div></section>'+
+    '<section class="sec grid">'+
+      '<div>'+secH('Últimos resultados')+(rec.length?'<div class="list">'+rec.map(function(x){return matchRow(x.p,x.t,true);}).join('')+'</div>':'<div class="empty">Aún no hay resultados.</div>')+'</div>'+
+      '<div>'+secH('Próximos partidos')+(up.length?'<div class="list">'+up.map(function(x){return matchRow(x.p,x.t,true);}).join('')+'</div>':'<div class="empty">No hay partidos programados.</div>')+'</div>'+
+    '</section>'+
+    '<section class="sec">'+secH('Top jugadores <small class="h-sub">liga + copa</small>','<a href="#ranking">Ver ranking →</a>')+(top.length?'<div class="list">'+top.map(function(p,i){return playerRow(p,i,true);}).join('')+'</div>':'<div class="empty">Sin estadísticas todavía.</div>')+'</section>';
+}
+
+function playerRow(p,i,showTeam){
+  return '<div class="pl"><span class="rk">'+(i+1)+'</span><div><div class="nm">'+esc(p.nombre)+(showTeam?' <span class="tag">'+esc(p.team.corto||p.team.nombre)+'</span>':'')+'</div>'+
+  '<div class="sub">'+p.pj+' PJ · '+p.pg+' G · '+p.pp+' P · Sets '+(p.dif>0?'+':'')+p.dif+'</div><div class="bar"><i style="width:'+p.pct+'%"></i></div></div><span class="pc">'+p.pct+'<small>%</small></span></div>';
+}
+
+function viewTeam(t){
+  var s=teamStats(t),c;
+  if(sub==='clasificacion'){
+    var tab=sortedTable(t);
+    c=tab.length?'<div class="tbl-wrap"><table><thead><tr><th>#</th><th class="l">Equipo</th><th>PJ</th><th>PG</th><th>PP</th><th>Dif</th><th>Pts</th></tr></thead><tbody>'+
+      tab.map(function(r,i){var d=num(r.sf)-num(r.sc);return '<tr class="'+(isUs(r,t)?'us':'')+'"><td><span class="pn '+(i<3?'top':'')+'">'+(i+1)+'</span></td><td class="l">'+esc(r.equipo)+'</td><td>'+num(r.pj)+'</td><td>'+num(r.pg)+'</td><td>'+num(r.pp)+'</td><td>'+(d>0?'+':'')+d+'</td><td class="pts">'+num(r.pts)+'</td></tr>';}).join('')+
+      '</tbody></table></div><p class="legend">PJ jugados · PG ganados · PP perdidos · Dif sets a favor − en contra · Pts puntos</p>':'<div class="empty">Clasificación sin publicar.</div>';
+  } else if(sub==='partidos'){
+    var ps=t.partidos.slice().sort(byJ);
+    c=ps.length?'<div class="list">'+ps.map(function(p){return matchRow(p,t,false,true);}).join('')+'</div>':'<div class="empty">Calendario sin publicar.</div>';
+  } else if(sub==='copa'&&t.copa){
+    var ce=copaEstado(t),cp=copaPartidos(t).slice().sort(byRonda);
+    c='<div class="card copa-hero '+(ce?ce.cls:'')+'"><span class="trophy">🏆</span><div><small>'+esc(t.copa.nombre||'Copa')+'</small><b>'+esc(ce?ce.txt:'Sin partidos')+'</b>'+(t.copa.fuente?'<a class="src" href="'+esc(t.copa.fuente)+'" target="_blank" rel="noopener">Ver cuadro en la Federación ↗</a>':'')+'</div></div>'+
+      (cp.length?'<div class="list" style="margin-top:14px">'+cp.map(function(p){return matchRow(p,t,false,true);}).join('')+'</div>':'');
+  } else {
+    var pl=t.jugadores.map(function(p){return pstat(p);}).filter(function(p){return p.pj>0||compFilter==='total';}).sort(rankSort);
+    c=compChips()+(pl.length?'<div class="list">'+pl.map(function(p,i){return playerRow(p,i,false);}).join('')+'</div>':'<div class="empty">Sin partidos en esta competición.</div>');
+  }
+  var tabs=[['clasificacion','Liga'],['partidos','Partidos'],['copa','Copa'],['jugadores','Jugadores']].filter(function(x){return x[0]!=='copa'||t.copa;});
+  return '<section class="thero"><span class="chip">'+esc(t.categoria)+'</span><h1>'+esc(t.nombre)+'</h1><p>'+esc(t.liga)+(t.fuente?' · <a class="src" href="'+esc(t.fuente)+'" target="_blank" rel="noopener">Ver en la Federación ↗</a>':'')+'</p>'+
+    '<div class="kpis"><div class="card kpi"><div><b>'+(s.pos?s.pos+'º':'–')+'</b><small>Posición'+(s.total?' / '+s.total:'')+'</small></div></div>'+
+    '<div class="card kpi"><div><b>'+(s.row?num(s.row.pts):'–')+'</b><small>Puntos</small></div></div>'+
+    '<div class="card kpi"><div><b>'+s.v+'<span style="color:var(--muted);font-size:22px"> – '+s.d+'</span></b><small>Victorias – Derrotas</small></div></div>'+
+    '<div class="card kpi"><div class="ring" style="--p:'+s.pct+'"><span>'+s.pct+'%</span></div><div><small>Victorias</small><div class="forma" style="margin:6px 0 0">'+formaDots(s.forma)+'</div></div></div></div></section>'+
+    '<div class="subtabs">'+tabs.map(function(x){return '<button data-act="sub" data-v="'+x[0]+'" class="'+(sub===x[0]?'on':'')+'">'+x[1]+'</button>';}).join('')+'</div>'+
+    '<section class="sec" style="margin-top:16px">'+c+'</section>';
+}
+
+function compChips(){return '<div class="filters comp">'+[['total','Liga + Copa'],['liga','Liga'],['copa','Copa']].map(function(x){return '<button data-act="cf" data-v="'+x[0]+'" class="'+(compFilter===x[0]?'on':'')+'">'+x[1]+'</button>';}).join('')+'</div>';}
+function initials(n){var w=String(n).split(/\s+/).filter(Boolean);return ((w[0]||'')[0]||'').toUpperCase()+((w[1]||'')[0]||'').toUpperCase();}
+function viewPlantilla(D){
+  var total=0;
+  var secs=D.equipos.map(function(t){
+    var ps=t.jugadores.map(function(p){var s=pstat(p,'total');s.liga=num(p.pj);s.copa=num(p.cpj);return s;}).filter(function(p){return p.pj>0;})
+      .sort(function(a,b){return String(a.nombre).localeCompare(String(b.nombre),'es');});
+    total+=ps.length;
+    return '<section class="card squad"><div class="squad-h"><div><span class="chip">'+esc(t.categoria)+'</span><h3>'+esc(t.nombre)+'</h3></div><span class="squad-n"><b>'+ps.length+'</b><small>jugador'+(/femen/i.test(t.categoria)?'as':'es')+'</small></span></div>'+
+      (ps.length?'<div class="squad-grid">'+ps.map(function(p){return '<div class="sp"><span class="av">'+esc(initials(p.nombre))+'</span><div><b>'+esc(p.nombre)+'</b><small>'+p.pj+' partido'+(p.pj===1?'':'s')+(p.copa?' · '+p.copa+' de copa':'')+'</small></div></div>';}).join('')+'</div>':'<div class="empty">Sin partidos todavía.</div>')+
+      '<a class="src" href="#'+esc(t.id)+'">Ver estadísticas de '+esc(t.corto||t.nombre)+' →</a></section>';
+  });
+  return '<section class="thero"><span class="chip">Temporada '+esc(D.temporada)+'</span><h1>Plantilla</h1><p>'+total+' jugadores y jugadoras que han jugado con el DMP esta temporada, en liga o copa, según las actas de la Federación. Se actualiza sola.</p></section>'+
+    '<div class="squads">'+secs.join('')+'</div>'+
+    (igUrl(D)?'<section class="card ig-cta"><div><b>Síguenos en Instagram</b><small>Fotos y el día a día del club.</small></div>'+igBtn(D,true)+'</section>':'');
+}
+function viewRanking(D){
+  var all=allPlayers(D).filter(function(p){return rankFilter==='all'||p.team.id===rankFilter;});
+  var top=all.filter(function(p){return p.pj>0;}).slice(0,3);
+  var pod='';
+  if(top.length===3){
+    var order=[1,0,2],med=['🥇','🥈','🥉'];
+    pod='<div class="podium">'+order.map(function(i){var p=top[i];return '<div class="pod p'+(i+1)+'"><div class="med">'+med[i]+'</div><div class="nm">'+esc(p.nombre)+'</div><div class="pc">'+p.pct+'%</div><small>'+p.pg+'/'+p.pj+' · '+esc(p.team.corto||p.team.nombre)+'</small></div>';}).join('')+'</div>';
+  }
+  var f=[['all','Todos']].concat(D.equipos.map(function(t){return [t.id,t.corto||t.nombre];}));
+  return '<section class="thero"><span class="chip">Todos los equipos</span><h1>Ranking de jugadores</h1><p>Liga y copa de la Federación. Ordenado por % de victorias y, después, por partidos ganados.</p></section>'+
+    compChips()+'<div class="filters">'+f.map(function(x){return '<button data-act="rf" data-v="'+esc(x[0])+'" class="'+(rankFilter===x[0]?'on':'')+'">'+esc(x[1])+'</button>';}).join('')+'</div>'+
+    pod+(all.length?'<div class="list">'+all.map(function(p,i){return playerRow(p,i,true);}).join('')+'</div>':'<div class="empty">Sin jugadores todavía.</div>')+
+    (edit?'<p class="hint" style="margin-top:14px">Los jugadores se editan desde la pestaña de cada equipo.</p>':'');
+}
+
+/* ---------- noticias ---------- */
+function news(D){return (D.noticias||[]).slice().sort(function(a,b){return String(b.fecha+b.hora).localeCompare(String(a.fecha+a.hora));});}
+function teamById(D,id){for(var i=0;i<D.equipos.length;i++){if(D.equipos[i].id===id)return D.equipos[i];}return null;}
+function longDate(s){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');if(!m)return esc(s||'');try{return new Date(+m[1],+m[2]-1,+m[3]).toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'});}catch(e){return esc(s);}}
+function newsCard(D,n,short){
+  var t=teamById(D,n.equipo),fotos=n.fotos||[],has=n.dmp!==''&&n.dmp!=null&&n.riv!==''&&n.riv!=null,o=has?(num(n.dmp)>num(n.riv)?'V':num(n.dmp)<num(n.riv)?'D':'E'):null;
+  var txt=String(n.texto||'');if(short&&txt.length>170)txt=txt.slice(0,170).replace(/\s+\S*$/,'')+'…';
+  return '<article class="card news">'+
+    (fotos.length?'<div class="ph-strip'+(fotos.length===1?' one':'')+'">'+fotos.map(function(f,i){return '<button class="ph" data-act="photo" data-src="'+esc(f)+'"><img src="'+esc(f)+'" alt="Foto '+(i+1)+'" loading="lazy"></button>';}).join('')+'</div>':'')+
+    '<div class="news-in"><div class="m-meta"><span class="j">'+longDate(n.fecha)+(n.hora?' · '+esc(n.hora):'')+'</span>'+(t?'<span class="tag">'+esc(t.corto||t.nombre)+'</span>':'')+'</div>'+
+    '<h3>'+esc(n.titulo)+'</h3>'+
+    (has?'<div class="score-band b'+o+'"><span class="m-team us">'+esc(t?t.nombre:D.club)+'</span><span class="m-score">'+num(n.dmp)+'<i>–</i>'+num(n.riv)+'</span><span class="m-team">'+esc(n.rival||'Rival')+'</span><span class="badge b-'+o+'">'+(o==='V'?'Victoria':o==='D'?'Derrota':'Empate')+'</span></div>':'')+
+    (txt?'<p class="news-txt">'+esc(txt).replace(/\n/g,'<br>')+'</p>':'')+
+    (short&&String(n.texto||'').length>170?'<a class="more" href="#noticias">Leer más →</a>':'')+
+    '</div></article>';
+}
+function viewNews(D){
+  var ns=news(D);
+  return '<section class="thero"><span class="chip">Crónicas y fotos</span><h1>Noticias</h1><p>Resultados de cada jornada, fotos y novedades del club.</p></section>'+
+    (ns.length?'<div class="news-list">'+ns.map(function(n){return newsCard(D,n,false);}).join('')+'</div>':'<div class="empty">Todavía no hay noticias.</div>');
+}
+function editNews(D){
+  var opts=[['','General (club)']].concat(D.equipos.map(function(t){return [t.id,t.nombre];}));
+  var h='<section class="thero"><span class="chip">Modo edición</span><h1>Noticias</h1><p>El resultado es opcional: déjalo vacío si la noticia no es de un partido.</p></section>';
+  h+='<button class="btn pri add" data-act="addnews">+ Nueva noticia</button>';
+  (D.noticias||[]).forEach(function(n,i){
+    var b='noticias.'+i;
+    h+='<section class="esec card"><div class="fgrid">'+field('Título',b+'.titulo',n.titulo)+field('Fecha',b+'.fecha',n.fecha,'date')+field('Hora',b+'.hora',n.hora,'time')+
+      '<label class="f">Equipo<select data-path="'+b+'.equipo">'+opts.map(function(o){return '<option value="'+esc(o[0])+'"'+(o[0]===n.equipo?' selected':'')+'>'+esc(o[1])+'</option>';}).join('')+'</select></label>'+
+      field('Rival',b+'.rival',n.rival)+field('Puntos DMP',b+'.dmp',n.dmp,'num')+field('Puntos rival',b+'.riv',n.riv,'num')+'</div>'+
+      '<label class="f" style="margin-top:10px">Texto<textarea rows="4" data-path="'+b+'.texto">'+esc(n.texto)+'</textarea></label>'+
+      '<div class="thumbs">'+(n.fotos||[]).map(function(f,k){return '<div class="th"><img src="'+esc(f)+'" alt=""><button class="del" data-act="delphoto" data-path="'+b+'.fotos.'+k+'">✕</button></div>';}).join('')+
+      '<label class="th addph">＋ Foto<input type="file" accept="image/*" multiple data-photos="'+b+'.fotos"></label></div>'+
+      '<button class="btn warn add" data-act="del" data-path="'+b+'">Borrar noticia</button></section>';
+  });
+  return h;
+}
+function shrink(file){return new Promise(function(res,rej){
+  var url=URL.createObjectURL(file),img=new Image();
+  img.onload=function(){var M=1280,w=img.naturalWidth,h=img.naturalHeight,k=Math.min(1,M/Math.max(w,h));var c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);var d=c.toDataURL('image/webp',0.75);if(d.indexOf('data:image/webp')!==0)d=c.toDataURL('image/jpeg',0.78);res(d);};
+  img.onerror=function(){URL.revokeObjectURL(url);rej();};img.src=url;});}
+var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<img alt="Foto">';lb.addEventListener('click',function(){lb.classList.remove('on');});document.body.appendChild(lb);
+
+/* ---------- edit ---------- */
+function field(label,path,val,type){return '<label class="f">'+label+'<input '+(type==='num'?'type="number" inputmode="numeric" data-num ':'type="'+(type||'text')+'" ')+'data-path="'+path+'" value="'+esc(val)+'"></label>';}
+function editTable(path,sec,cols,rows){
+  var h='<div class="tbl-wrap etbl"><table><thead><tr>'+cols.map(function(c){return '<th class="'+(c.t==='text'?'l':'')+'">'+c.l+'</th>';}).join('')+'<th></th></tr></thead><tbody>';
+  rows.forEach(function(r,i){
+    h+='<tr>'+cols.map(function(c){var p=path+'.'+i+'.'+c.k,v=r[c.k];
+      if(c.t==='sel')return '<td><select data-path="'+p+'">'+c.o.map(function(o){return '<option'+(o===v?' selected':'')+'>'+o+'</option>';}).join('')+'</select></td>';
+      if(c.t==='num')return '<td><input class="n" type="number" inputmode="numeric" data-num data-path="'+p+'" value="'+esc(v)+'"></td>';
+      if(c.t==='date')return '<td><input class="d" type="date" data-path="'+p+'" value="'+esc(v)+'"></td>';
+      return '<td class="l"><input class="t" type="text" data-path="'+p+'" value="'+esc(v)+'"'+(c.ph?' placeholder="'+c.ph+'"':'')+'></td>';
+    }).join('')+'<td><button class="del" title="Borrar fila" data-act="del" data-path="'+path+'.'+i+'">✕</button></td></tr>';
+  });
+  return h+'</tbody></table></div><button class="btn add" data-act="add" data-path="'+path+'" data-sec="'+sec+'">+ Añadir fila</button>';
+}
+function editTeam(t,ti){
+  var b='equipos.'+ti;
+  return '<section class="thero"><span class="chip">Modo edición</span><h1>'+esc(t.nombre)+'</h1></section>'+
+  '<section class="esec"><h2>Datos del equipo</h2><div class="fgrid">'+field('Nombre',b+'.nombre',t.nombre)+field('Nombre corto (menú)',b+'.corto',t.corto)+field('Categoría',b+'.categoria',t.categoria)+field('Liga / grupo',b+'.liga',t.liga)+'</div></section>'+
+  '<section class="esec"><h2>Clasificación</h2><p class="hint">Escribe tu equipo con el mismo nombre de arriba («'+esc(t.nombre)+'») para que salga resaltado. Se ordena sola por puntos.</p>'+
+    editTable(b+'.clasificacion','clasificacion',[{k:'equipo',l:'Equipo',t:'text'},{k:'pj',l:'PJ',t:'num'},{k:'pg',l:'PG',t:'num'},{k:'pp',l:'PP',t:'num'},{k:'sf',l:'Sets +',t:'num'},{k:'sc',l:'Sets −',t:'num'},{k:'pts',l:'Pts',t:'num'}],t.clasificacion)+'</section>'+
+  '<section class="esec"><h2>Partidos</h2><p class="hint">Resultado: lo de DMP y lo del rival (p. ej. 2 y 1). Déjalo vacío si está pendiente.</p>'+
+    editTable(b+'.partidos','partidos',[{k:'j',l:'Jor.',t:'num'},{k:'fecha',l:'Fecha',t:'date'},{k:'rival',l:'Rival',t:'text'},{k:'lugar',l:'Lugar',t:'sel',o:['Local','Visitante']},{k:'dmp',l:'DMP',t:'num'},{k:'riv',l:'Rival',t:'num'}],t.partidos)+'</section>'+
+  '<section class="esec"><h2>Jugadores</h2><p class="hint">PJ partidos jugados, PG ganados, sets ganados y perdidos.</p>'+
+    editTable(b+'.jugadores','jugadores',[{k:'nombre',l:'Nombre',t:'text'},{k:'pj',l:'PJ',t:'num'},{k:'pg',l:'PG',t:'num'},{k:'sg',l:'Sets +',t:'num'},{k:'sp',l:'Sets −',t:'num'}],t.jugadores)+'</section>';
+}
+function editClub(D){
+  return '<section class="thero"><span class="chip">Modo edición</span><h1>Datos del club</h1><p>Los equipos se editan desde su pestaña del menú.</p></section>'+
+  '<section class="esec"><div class="fgrid">'+field('Nombre del club','club',D.club)+field('Sede','sede',D.sede)+field('Temporada','temporada',D.temporada)+field('Datos actualizados el','actualizado',D.actualizado)+'</div></section>'+
+  '<section class="esec"><h2>Datos de ejemplo</h2><p class="hint">Vacía todas las clasificaciones, partidos y jugadores para empezar con los datos reales. No se publica hasta que pulses «Guardar y publicar».</p><button class="btn warn" data-act="clear">'+(clearArmed?'¿Seguro? Toca otra vez':'Vaciar datos de ejemplo')+'</button></section>';
+}
+function editBar(){return '<div class="ebar"><span>✎ Editando</span><div><button class="btn" data-act="cancel">Cancelar</button><button class="btn pri" data-act="save">Guardar y publicar</button></div></div>';}
+
+function clean(D){
+  var d=JSON.parse(JSON.stringify(D));
+  d.equipos.forEach(function(t){
+    t.clasificacion=t.clasificacion.filter(function(r){return String(r.equipo).trim();});
+    t.partidos=t.partidos.filter(function(p){return String(p.rival).trim();});
+    t.jugadores=t.jugadores.filter(function(p){return String(p.nombre).trim();});
+  });
+  d.noticias=(d.noticias||[]).filter(function(n){return String(n.titulo||'').trim()||String(n.texto||'').trim()||(n.fotos||[]).length;});
+  return d;
+}
+function buildDoc(D){
+  var css=document.getElementById('app-css').textContent, js=document.getElementById('app-js').textContent, logo=document.getElementById('logo-data').textContent.trim();
+  var json=JSON.stringify(D,null,1).replace(/</g,'\\u003c');
+  var E='</'+'script>';
+  return '<!DOCTYPE html>\n<html lang="es">\n<head>\n'+HEAD+'<style id="app-css">'+css+'</style>\n</head>\n<body>\n<div id="root"></div>\n<script id="logo-data" type="text/plain">'+logo+E+'\n<script id="data" type="application/json">'+json+E+'\n<script id="app-js">'+js+E+'\n</body>\n</html>\n';
+}
+function save(btn){
+  if(!artifactNS){toast('Para publicar, abre la web publicada en claude.ai con tu cuenta de propietario.',4500);return;}
+  btn.disabled=true;btn.textContent='Publicando…';
+  artifactNS.publish(buildDoc(clean(edit))).then(function(){toast('¡Publicado! Recargando…');}).catch(function(e){
+    btn.disabled=false;btn.textContent='Guardar y publicar';
+    var c=String((e&&(e.code||e.message))||e||'');
+    if(/not_granted|not_writer/.test(c))toast('Solo el propietario o los editores pueden publicar cambios.',4500);
+    else if(/conflict/.test(c))toast('Alguien publicó a la vez; la página se recargará.',4500);
+    else toast('No se pudo publicar: '+c,5000);
+  });
+}
+
+root.addEventListener('input',function(e){
+  var el=e.target;if(!edit||!el.dataset||!el.dataset.path)return;
+  var v=el.value;if('num' in el.dataset)v=v===''?'':num(v);
+  setPath(edit,el.dataset.path,v);
+});
+root.addEventListener('change',function(e){var el=e.target;
+  if(edit&&el.dataset&&el.dataset.photos&&el.files&&el.files.length){
+    var arr=getPath(edit,el.dataset.photos),fs=Array.prototype.slice.call(el.files);toast('Procesando fotos…');
+    Promise.all(fs.map(function(f){return shrink(f).catch(function(){return null;});})).then(function(ds){ds.forEach(function(d){if(d)arr.push(d);});render();toast(ds.filter(Boolean).length+' foto(s) añadida(s)');});
+    return;
+  }if(edit&&el.tagName==='SELECT'&&el.dataset.path)setPath(edit,el.dataset.path,el.value);});
+root.addEventListener('click',function(e){
+  var b=e.target.closest('[data-act]');if(!b)return;var a=b.dataset.act;
+  if(a!=='clear')clearArmed=false;
+  if(a==='sub'){sub=b.dataset.v;render();}
+  else if(a==='photo'){lb.querySelector('img').src=b.dataset.src;lb.classList.add('on');}
+  else if(a==='addnews'){if(!edit.noticias)edit.noticias=[];var dt=new Date(),p=function(x){return (x<10?'0':'')+x;};edit.noticias.unshift({titulo:'',fecha:dt.getFullYear()+'-'+p(dt.getMonth()+1)+'-'+p(dt.getDate()),hora:'',equipo:'',rival:'',dmp:'',riv:'',texto:'',fotos:[]});render();}
+  else if(a==='delphoto'){var pp=b.dataset.path.split('.'),k=+pp.pop();getPath(edit,pp.join('.')).splice(k,1);render();}
+  else if(a==='rf'){rankFilter=b.dataset.v;render();}
+  else if(a==='cf'){compFilter=b.dataset.v;render();}
+  else if(a==='edit'){edit=JSON.parse(JSON.stringify(DATA));render();window.scrollTo(0,0);}
+  else if(a==='cancel'){edit=null;render();}
+  else if(a==='save'){save(b);}
+  else if(a==='add'){getPath(edit,b.dataset.path).push(JSON.parse(JSON.stringify(TPL[b.dataset.sec])));render();}
+  else if(a==='del'){var ps=b.dataset.path.split('.'),i=+ps.pop();getPath(edit,ps.join('.')).splice(i,1);render();}
+  else if(a==='clear'){
+    if(!clearArmed){clearArmed=true;render();return;}
+    clearArmed=false;edit.demo=false;
+    edit.equipos.forEach(function(t){t.clasificacion=[{equipo:t.nombre,pj:0,pg:0,pp:0,sf:0,sc:0,pts:0}];t.partidos=[];t.jugadores=[];});
+    render();toast('Datos de ejemplo vaciados. Pulsa «Guardar y publicar» para confirmarlo.',4500);
+  }
+});
+var pendingSub=null;
+window.addEventListener('hashchange',function(){sub=pendingSub||'clasificacion';pendingSub=null;render();window.scrollTo(0,0);});
+/* ---------- asistente X3 ---------- */
+var BALL='<svg class="ball" viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="bg3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#f6ff9a"/><stop offset=".55" stop-color="#d4f03a"/><stop offset="1" stop-color="#93b915"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="url(#bg3)"/><g class="seam" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"><path d="M14 22c18 14 18 42 0 56"/><path d="M86 22c-18 14-18 42 0 56"/></g><g class="eyes"><ellipse cx="38" cy="47" rx="5.5" ry="7.5" fill="#06101f"/><ellipse cx="62" cy="47" rx="5.5" ry="7.5" fill="#06101f"/><circle cx="40" cy="44" r="2" fill="#fff"/><circle cx="64" cy="44" r="2" fill="#fff"/></g><path d="M40 63q10 9 20 0" fill="none" stroke="#06101f" stroke-width="4" stroke-linecap="round"/><circle cx="29" cy="58" r="4.5" fill="#ff8aa0" opacity=".55"/><circle cx="71" cy="58" r="4.5" fill="#ff8aa0" opacity=".55"/></svg>';
+var x3=document.createElement('div');x3.className='x3';
+x3.innerHTML='<div class="x3-panel" role="dialog" aria-label="Asistente X3"><div class="x3-head"><div class="x3-av">'+BALL+'</div><div><b>X3</b><small>Asistente del DMP</small></div><button class="x3-close" aria-label="Cerrar">✕</button></div><div class="x3-msgs"></div><div class="x3-chips"></div><form class="x3-form"><input type="text" placeholder="Pregúntame algo…" aria-label="Pregunta"><button type="submit" aria-label="Enviar">➤</button></form></div>'+
+  '<button class="x3-fab" aria-label="Abrir asistente X3"><span class="x3-tag">X3</span>'+BALL+'<span class="x3-shadow"></span><span class="x3-hi">¿Te ayudo?</span></button>';
+document.body.appendChild(x3);
+var xMsgs=x3.querySelector('.x3-msgs'),xChips=x3.querySelector('.x3-chips'),xInput=x3.querySelector('input'),xOpened=false;
+var CHIPS=['Cuéntame un chiste','Próximos partidos','¿Cómo vamos?','¿Cómo va la copa?','Último resultado','Mejores jugadores','Plantilla','Noticias','Instagram'];
+function xAdd(html,who){var d=document.createElement('div');d.className='x3-m '+(who||'bot');d.innerHTML=html;xMsgs.appendChild(d);xMsgs.scrollTop=xMsgs.scrollHeight;return d;}
+function xSetChips(list){xChips.innerHTML=(list||CHIPS).map(function(c){return '<button data-q="'+esc(c)+'">'+esc(c)+'</button>';}).join('');}
+function go(view,s){return '<button class="x3-go" data-go="'+view+(s?':'+s:'')+'">'+arguments[2]+' →</button>';}
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[¿?¡!.,;:]/g,' ');}
+function findTeam(q){
+  if(/chica|femen|mujer|valky|neska|ellas/.test(q))return teamById(DATA,'femenino');
+  if(/quinta|\b5\b|5a|5ª/.test(q))return teamById(DATA,'quinta');
+  if(/sexta|\b6\b|6a|academy/.test(q))return teamById(DATA,'sexta');
+  return null;
+}
+function findPlayer(q){
+  var best=null;
+  DATA.equipos.forEach(function(t){t.jugadores.forEach(function(p){
+    var parts=norm(p.nombre).split(/\s+/).filter(function(w){return w.length>3;});
+    var hits=parts.filter(function(w){return new RegExp('\\b'+w+'\\b').test(q);}).length;
+    if(hits&&(!best||hits>best.h))best={p:p,t:t,h:hits};
+  });});
+  return best;
+}
+function byF(a,b){return String(a.fecha).localeCompare(String(b.fecha));}
+function nextOf(t,list){return (list||allMatchesOf(t)).filter(function(p){return !played(p);}).sort(byF)[0]||null;}
+function lastOf(t,list){var j=(list||allMatchesOf(t)).filter(played).sort(byF);return j[j.length-1]||null;}
+function mLine(t,p){var o=outcome(p);return '<b>'+esc(t.nombre)+'</b> '+(o?num(p.dmp)+'–'+num(p.riv):'vs')+' '+esc(p.rival)+' · '+(p.ronda?'Copa, '+esc(rondaCorta(p.ronda)).toLowerCase():'J'+esc(p.j))+', '+fmtDate(p.fecha)+(p.hora?' '+esc(p.hora):'')+(p.sede?' · '+esc(p.sede):'')+(o?' <span class="x3-'+o+'">'+(o==='V'?'victoria':o==='D'?'derrota':'empate')+'</span>':'');}
+function answer(raw){
+  var q=norm(raw),t=findTeam(q),pl=findPlayer(q),teams=t?[t]:DATA.equipos;
+  if(/chiste|broma|hazme reir|hazme gracia|algo gracioso|cuentame algo|me aburro/.test(q)||(lastWasJoke&&/^\s*(otro|otra|mas|uno mas|venga)\b/.test(q))){lastWasJoke=true;return joke()+'<br><small class="x3-hint">¿Otro? Escribe «otro» 😄</small>';}
+  lastWasJoke=false;
+  if(/^\s*(hola|buenas|kaixo|hey|ey)\b/.test(q)&&q.length<20)return '¡Hola! 🎾 Pregúntame por partidos, clasificaciones, resultados, jugadores o noticias del DMP.';
+  if(/gracias|eskerrik/.test(q))return '¡A mandar! Si necesitas algo más, aquí estoy botando. 🎾';
+  if(/que (puedes|sabes)|ayuda|como funciona|que haces/.test(q))return 'Te puedo decir:<br>• Cuándo y dónde juega cada categoría<br>• Cómo va la clasificación de liga y la copa<br>• Los últimos resultados, pareja a pareja<br>• Quién lleva mejor % de victorias<br>• Las últimas noticias<br>• Y chistes de pádel, si te hace falta reírte un rato 😄<br>Puedes preguntar, por ejemplo: <i>«¿cuándo juegan las chicas?»</i> o <i>«¿cómo va Jorge Negro?»</i>';
+  if(pl&&!/clasif|proxim|cuando/.test(q)){var s=pstat(pl.p,/copa|kopa/.test(q)?'copa':/liga/.test(q)?'liga':'total');return '<b>'+esc(pl.p.nombre)+'</b> ('+esc(pl.t.nombre)+'): '+s.pj+(s.pj===1?' partido, ':' partidos, ')+s.pg+(s.pg===1?' ganado (':' ganados (')+s.pct+'%), sets '+s.sg+'-'+s.sp+' ('+(/copa|kopa/.test(q)?'copa':/liga/.test(q)?'liga':'liga + copa')+').'+go('ranking','','Ver ranking');}
+  if(/donde|sede|pic|pista|instalacion|direccion|llegar/.test(q)&&!/proxim|cuando/.test(q)){
+    return 'Los partidos en casa se juegan en <b>BamVolea PIC</b> (Padel Indoor Center). Fuera de casa depende del rival: en cada partido del calendario verás la sede. No tengo la dirección exacta guardada, así que mejor búscala en el mapa.'+go(t?t.id:'inicio',t?'partidos':'','Ver calendario');}
+  if(/copa|kopa|eliminatori|cuadro|semifinal|cuartos|octavos|\bfinal\b/.test(q)&&!/jugador|mejor|ranking|top|quien/.test(q)){
+    return teams.map(function(x){var ce=copaEstado(x);if(!ce)return '<b>'+esc(x.nombre)+'</b>: sin datos de copa.';var p=nextOf(x,copaPartidos(x)),l=lastOf(x,copaPartidos(x));
+      return '🏆 <b>'+esc(x.nombre)+'</b>: '+esc(ce.txt)+'.'+(l?'<br>Último: '+mLine(x,l):'')+(p?'<br>Próximo: '+mLine(x,p):'');}).join('<br><br>')+(t&&t.copa?go(t.id,'copa','Ver copa'):'');}
+  if(/clasif|posicion|puesto|tabla|como vamos|como va|lider|lideres|primeros|puntos/.test(q)){
+    return teams.map(function(x){var st=teamStats(x);return '<b>'+esc(x.nombre)+'</b> ('+esc(x.categoria)+'): '+(st.pos?st.pos+'º de '+st.total+' con '+num(st.row.pts)+' puntos':'sin clasificación');}).join('<br>')+(t?go(t.id,'clasificacion','Ver clasificación'):'');}
+  if(/resultado|ultimo|ultima|gano|ganamos|perdi|marcador|jornada pasada|como quedo|quedamos/.test(q)){
+    var rows=teams.map(function(x){var p=lastOf(x);return p?mLine(x,p):'<b>'+esc(x.nombre)+'</b>: aún sin resultados.';});
+    var extra='';if(t){var p=lastOf(t);if(p&&p.parejas&&p.parejas.length)extra='<div class="x3-prs">'+p.parejas.map(function(z){return (z.g?'✅ ':'❌ ')+esc(z.dmp)+' · '+esc(z.sets);}).join('<br>')+'</div>';}
+    return rows.join('<br>')+extra+(t?go(t.id,'partidos','Ver partidos'):'');}
+  if(/proxim|siguiente|cuando|calendario|juega|jugamos|partido|horario|hora/.test(q)){
+    return teams.map(function(x){var p=nextOf(x);return p?mLine(x,p):'<b>'+esc(x.nombre)+'</b>: no hay partidos pendientes.';}).join('<br>')+(t?go(t.id,'partidos','Ver calendario'):'');}
+  if(/jugador|mejor|ranking|top|quien|crack|estadistic|porcentaje/.test(q)){
+    var md=/copa|kopa/.test(q)?'copa':/liga/.test(q)?'liga':'total';var all=(t?t.jugadores.map(function(p){var s=pstat(p,md);s.team=t;return s;}).sort(rankSort):allPlayers(DATA,md)).filter(function(p){return p.pj>0;}).slice(0,5);
+    return all.length?'Top '+(t?esc(t.nombre):'del club')+' por % de victorias ('+(md==='total'?'liga + copa':md)+'):<br>'+all.map(function(p,i){return (i+1)+'. '+esc(p.nombre)+' — '+p.pct+'% ('+p.pg+'/'+p.pj+')';}).join('<br>')+go(t?t.id:'ranking',t?'jugadores':'',t?'Ver jugadores':'Ver ranking'):'Todavía no hay estadísticas de jugadores.';}
+  if(/instagram|insta\b|redes/.test(q))return igUrl(DATA)?'Estamos en Instagram como <b>@'+esc(String(DATA.instagram).replace(/^@/,''))+'</b>: <a class="x3-go" href="'+igUrl(DATA)+'" target="_blank" rel="noopener">Abrir Instagram ↗</a>':'Todavía no tengo el Instagram del club.';
+  if(/plantilla|convocad|quienes juegan|jugadores de|jugadoras de|quien juega/.test(q)&&!/mejor|ranking|top/.test(q)){
+    return teams.map(function(x){var n=x.jugadores.filter(function(p){return pstat(p,'total').pj>0;}).length;return '<b>'+esc(x.nombre)+'</b>: '+n+' jugador'+(/femen/i.test(x.categoria)?'as':'es')+' han jugado esta temporada.';}).join('<br>')+go('plantilla','','Ver plantilla');}
+  if(/noticia|cronica|foto|novedad/.test(q)){var ns=news(DATA);return ns.length?'Lo último: <b>'+esc(ns[0].titulo)+'</b> ('+longDate(ns[0].fecha)+').'+go('noticias','','Ver noticias'):'Aún no hay noticias publicadas.';}
+  if(/equipo|categoria|cuantos/.test(q))return 'El DMP tiene '+DATA.equipos.length+' equipos en la Liga Bizkaina:<br>'+DATA.equipos.map(function(x){return '• <b>'+esc(x.nombre)+'</b> — '+esc(x.categoria);}).join('<br>');
+  if(t){var st=teamStats(t),p=nextOf(t);return '<b>'+esc(t.nombre)+'</b> va '+(st.pos?st.pos+'º con '+num(st.row.pts)+' puntos':'sin clasificación')+'.'+(p?'<br>Próximo: '+mLine(t,p):'')+go(t.id,'','Ver '+esc(t.corto||t.nombre));}
+  return 'Esa no me la sé 😅 y prefiero no inventármela. Prueba con partidos, clasificación, resultados, jugadores o noticias.';
+}
+var JOKES=["Hoy es el Día del Pádel. Felicidades a todos los pádels… y a las mádels también. 👨‍👧","—Papá, ¿qué me vas a dejar en herencia?<br>—La pala, hijo. Yo siempre he sido un buen pádel.","Pádel nuestro que estás en la pista, santificado sea tu saque, venga a nosotros tu globo…","Pádel no hay más que uno. Y a ti te encontré en la pista 3.","«Luke… yo soy tu pádel.» «¡Noooo! ¡Si tú eres de tenis!»","De tal pala, tal astilla. Mi pádel también fallaba todas las voleas.","Mi mujer dice que quiero más al pádel que a ella. Y eso que todavía no sabe lo de la pala nueva.","En mi casa manda el pádel de familia: decide él cuándo se juega… después de preguntarle a la mádel.","—Mi pareja y yo lo hacemos tres veces por semana.<br>—¡Qué envidia!<br>—Y los domingos, partido de liga.","A mí me gusta que me la pongan arriba y despacito… La bola, digo. Para rematar.","Busco pareja estable. La última me dejó por uno que tenía mejor revés.","—¿Tú de qué lado juegas?<br>—Del que me dejen, que llevo una racha muy mala.","Ayer duré tres horas con mi pareja. Tres sets, tie-break incluido. Hoy no me puedo ni mover.","Mi pareja me ha dicho que o cambio la forma de cogerla o me deja. La pala, claro: empuñadura continental.","—Cariño, ¿me engañas con otra?<br>—Solo los martes, pero es que tiene una derecha…","Con los años ya no aguanto lo de antes: ahora al segundo set pido cambio de pareja… y una silla.","Lo mío con mi pareja es amor verdadero: nos gritamos «¡tuya!» los dos a la vez y la bola se queda en medio.","Me han dicho que tengo buena mano. Lástima que la bola vaya siempre a la otra.","—¿Qué le regalas a tu pádel por su día?<br>—Un bote de bolas. Que luego dice que nunca le doy nada.","El pádel es como el matrimonio: empiezas por amor, sigues por costumbre y siempre hay un cristal de por medio.","¿Por qué la pelota de pádel nunca se aburre? Porque se pasa la vida de rebote en rebote. 🎾", "—¿Tú juegas de drive o de revés?<br>—Yo juego de milagro.", "¿Qué le dice una pala a otra antes del partido? «Nos vemos en la red».", "Soy tan malo con el globo que el último que tiré todavía está en órbita. 🚀", "¿Por qué el cristal es el mejor amigo del jugador de pádel? Porque siempre te devuelve lo que le das.", "—¿Qué tal el partido?<br>—Bien: la bola ha tocado más veces la reja que mi pala.", "¿Cuál es el colmo de un jugador de pádel? Pasarse la vida entre cristales y no romper ninguno.", "—¿Por qué llegas tan tarde?<br>—El partido fue a tres sets… y el almuerzo de después, a cinco.", "¿Qué hace una pelota de pádel en el gimnasio? Botes. Muchos botes.", "Le pregunté a mi pareja de pádel si confiaba en mí. Me dijo: «Sí, pero quédate en tu lado».", "¿Qué le dice la red a la pelota? «Hoy por aquí no pasas».", "El médico me mandó hacer cardio. Ahora corro detrás de todas las bolas que me pasan por el medio.", "¿Por qué fue la pala al psicólogo? Porque se sentía llena de agujeros.", "¿Cuántos jugadores de pádel hacen falta para cambiar una bombilla? Cuatro: uno la cambia y los otros tres le gritan «¡tuya!».", "Dicen que el pádel engancha. Yo voy por la tercera pala y sigo sin dar una.", "Yo no fallo la bandeja: es que se la sirvo directamente a la reja.", "¿Por qué las pelotas de pádel vienen en bote? Para que no se escapen antes del partido.", "Como pelota oficial del DMP os pido una cosa: no me deis tan fuerte, que yo solo vine a botar. 😅", "—Entrenador, ¿cómo puedo mejorar mi remate?<br>—Empieza por mirar la bola, no a la grada.", "¿Qué es lo más rápido del pádel? La excusa después de fallar una volea fácil."];
+var jokeBag=[],lastWasJoke=false;
+function joke(){if(!jokeBag.length){jokeBag=JOKES.map(function(_,i){return i;});for(var i=jokeBag.length-1;i>0;i--){var k=Math.floor(Math.random()*(i+1)),t=jokeBag[i];jokeBag[i]=jokeBag[k];jokeBag[k]=t;}}return JOKES[jokeBag.pop()];}
+function ask(text){
+  if(!String(text).trim())return;
+  xAdd(esc(text),'me');
+  var typing=xAdd('<span class="x3-typing"><i></i><i></i><i></i></span>','bot');
+  x3.classList.add('talk');
+  setTimeout(function(){typing.innerHTML=answer(text);xMsgs.scrollTop=xMsgs.scrollHeight;x3.classList.remove('talk');},450);
+}
+function x3Open(){x3.classList.add('open');if(!xOpened){xOpened=true;xAdd('¡Hola! Soy <b>X3</b> 🎾, la pelota oficial del DMP. Pregúntame lo que quieras sobre los partidos, la clasificación o los jugadores.');xSetChips();}setTimeout(function(){try{xInput.focus({preventScroll:true});}catch(e){}},200);}
+x3.querySelector('.x3-fab').addEventListener('click',function(){if(x3.classList.contains('open'))x3.classList.remove('open');else x3Open();});
+x3.querySelector('.x3-close').addEventListener('click',function(){x3.classList.remove('open');});
+x3.querySelector('.x3-form').addEventListener('submit',function(e){e.preventDefault();var v=xInput.value;xInput.value='';ask(v);});
+x3.addEventListener('click',function(e){
+  var c=e.target.closest('[data-q]');if(c){ask(c.dataset.q);return;}
+  var g=e.target.closest('[data-go]');if(g){var a=g.dataset.go.split(':');if(a[1])sub=a[1];if(location.hash==='#'+a[0]){render();}else{pendingSub=a[1]||null;location.hash=a[0];}if(window.innerWidth<700)x3.classList.remove('open');}
+});
+setTimeout(function(){x3.classList.add('hint');setTimeout(function(){x3.classList.remove('hint');},5000);},1500);
+render();
+})();
+</script>
+</body>
+</html>
