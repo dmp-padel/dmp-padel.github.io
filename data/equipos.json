@@ -8,6 +8,24 @@
   "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/34?fase=60&grupoId=55&jornada=1",
   "clasificacion": [
    {
+    "equipo": "Picamos B",
+    "pj": 4,
+    "pg": 3,
+    "pp": 1,
+    "sf": 37,
+    "sc": 8,
+    "pts": 40
+   },
+   {
+    "equipo": "PadelBai ColónMetal",
+    "pj": 4,
+    "pg": 4,
+    "pp": 0,
+    "sf": 35,
+    "sc": 8,
+    "pts": 37
+   },
+   {
     "equipo": "DMP",
     "pj": 3,
     "pg": 3,
@@ -17,31 +35,13 @@
     "pts": 32
    },
    {
-    "equipo": "PadelBai ColónMetal",
-    "pj": 3,
-    "pg": 3,
-    "pp": 0,
-    "sf": 26,
-    "sc": 6,
-    "pts": 28
-   },
-   {
-    "equipo": "Picamos B",
-    "pj": 3,
-    "pg": 2,
-    "pp": 1,
-    "sf": 27,
-    "sc": 7,
-    "pts": 28
-   },
-   {
     "equipo": "CT Begoñalde - Molinillos",
-    "pj": 3,
+    "pj": 4,
     "pg": 3,
-    "pp": 0,
-    "sf": 23,
-    "sc": 9,
-    "pts": 27
+    "pp": 1,
+    "sf": 25,
+    "sc": 18,
+    "pts": 30
    },
    {
     "equipo": "AUSARTA Pic Quinta New",
@@ -63,11 +63,20 @@
    },
    {
     "equipo": "BTC SUSHI ARTIST",
-    "pj": 3,
+    "pj": 4,
     "pg": 1,
-    "pp": 2,
-    "sf": 12,
-    "sc": 22,
+    "pp": 3,
+    "sf": 13,
+    "sc": 32,
+    "pts": 12
+   },
+   {
+    "equipo": "Laukariz Volea",
+    "pj": 4,
+    "pg": 1,
+    "pp": 3,
+    "sf": 10,
+    "sc": 33,
     "pts": 12
    },
    {
@@ -80,22 +89,13 @@
     "pts": 8
    },
    {
-    "equipo": "Laukariz Volea",
-    "pj": 3,
-    "pg": 0,
-    "pp": 3,
-    "sf": 2,
-    "sc": 28,
-    "pts": 2
-   },
-   {
     "equipo": "Getxo Pádel TZ",
-    "pj": 3,
+    "pj": 4,
     "pg": 0,
-    "pp": 3,
-    "sf": 0,
-    "sc": 30,
-    "pts": 0
+    "pp": 4,
+    "sf": 5,
+    "sc": 38,
+    "pts": 2
    }
   ],
   "partidos": [
@@ -777,40 +777,40 @@
   "fuente": "https://www.bizkaiapadel.com/Home/JornadaLiga/35?fase=61&grupoId=62&jornada=1",
   "clasificacion": [
    {
-    "equipo": "PADELZALEAK PADELKO 6M1",
-    "pj": 3,
-    "pg": 3,
-    "pp": 0,
-    "sf": 17,
-    "sc": 2,
-    "pts": 21
-   },
-   {
     "equipo": "RC JOLASETA CAÑEROS",
-    "pj": 3,
-    "pg": 3,
+    "pj": 4,
+    "pg": 4,
     "pp": 0,
-    "sf": 16,
+    "sf": 22,
     "sc": 3,
-    "pts": 21
+    "pts": 29
    },
    {
-    "equipo": "DMP Academy",
-    "pj": 3,
-    "pg": 2,
-    "pp": 1,
-    "sf": 14,
-    "sc": 8,
-    "pts": 19
+    "equipo": "PADELZALEAK PADELKO 6M1",
+    "pj": 4,
+    "pg": 4,
+    "pp": 0,
+    "sf": 21,
+    "sc": 4,
+    "pts": 26
    },
    {
     "equipo": "Leioa Pádel Club",
-    "pj": 3,
-    "pg": 2,
+    "pj": 4,
+    "pg": 3,
     "pp": 1,
-    "sf": 14,
+    "sf": 20,
     "sc": 6,
-    "pts": 16
+    "pts": 24
+   },
+   {
+    "equipo": "DMP Academy",
+    "pj": 4,
+    "pg": 2,
+    "pp": 2,
+    "sf": 14,
+    "sc": 14,
+    "pts": 19
    },
    {
     "equipo": "6 ENKARTERRI PADEL KLUBA",
@@ -822,12 +822,21 @@
     "pts": 16
    },
    {
-    "equipo": "SEMINARIO PADEL CLUB DERIO M6",
-    "pj": 3,
+    "equipo": "PADELZALEAK PADELKO 6M2",
+    "pj": 4,
     "pg": 0,
-    "pp": 3,
+    "pp": 4,
     "sf": 2,
-    "sc": 17,
+    "sc": 22,
+    "pts": 3
+   },
+   {
+    "equipo": "SEMINARIO PADEL CLUB DERIO M6",
+    "pj": 4,
+    "pg": 0,
+    "pp": 4,
+    "sf": 2,
+    "sc": 23,
     "pts": 3
    },
    {
@@ -836,15 +845,6 @@
     "pg": 0,
     "pp": 3,
     "sf": 3,
-    "sc": 18,
-    "pts": 0
-   },
-   {
-    "equipo": "PADELZALEAK PADELKO 6M2",
-    "pj": 3,
-    "pg": 0,
-    "pp": 3,
-    "sf": 0,
     "sc": 18,
     "pts": 0
    }
@@ -947,9 +947,28 @@
     "rival": "RC JOLASETA CAÑEROS",
     "lugar": "Visitante",
     "sede": "R.C. Jolaseta",
-    "dmp": "",
-    "riv": "",
-    "parejas": []
+    "dmp": 0,
+    "riv": 8,
+    "parejas": [
+     {
+      "dmp": "Borja Arrieta - Asier Cedrun",
+      "riv": "Jaime Gorostiaga - Gonzalo Landa",
+      "sets": "4-6 4-6",
+      "g": 0
+     },
+     {
+      "dmp": "David Sanz - Xabier Diaz",
+      "riv": "Álvaro Abaitua - Jorge Barrenechea",
+      "sets": "2-6 3-6",
+      "g": 0
+     },
+     {
+      "dmp": "Jorge Negro - Unai Caballero",
+      "riv": "Tomás Molina - Alejandro Manso",
+      "sets": "0-6 4-6",
+      "g": 0
+     }
+    ]
    },
    {
     "j": 5,
@@ -1032,10 +1051,10 @@
    },
    {
     "nombre": "Unai Caballero",
-    "pj": 1,
+    "pj": 2,
     "pg": 1,
     "sg": 2,
-    "sp": 1,
+    "sp": 3,
     "cpj": 1,
     "cpg": 0,
     "csg": 0,
@@ -1054,10 +1073,10 @@
    },
    {
     "nombre": "Asier Cedrun",
-    "pj": 1,
+    "pj": 2,
     "pg": 1,
     "sg": 2,
-    "sp": 0,
+    "sp": 2,
     "cpj": 0,
     "cpg": 0,
     "csg": 0,
@@ -1098,10 +1117,10 @@
    },
    {
     "nombre": "David Sanz",
-    "pj": 1,
+    "pj": 2,
     "pg": 1,
     "sg": 2,
-    "sp": 0,
+    "sp": 2,
     "cpj": 0,
     "cpg": 0,
     "csg": 0,
@@ -1120,10 +1139,10 @@
    },
    {
     "nombre": "Jorge Negro",
-    "pj": 1,
+    "pj": 2,
     "pg": 0,
     "sg": 0,
-    "sp": 2,
+    "sp": 4,
     "cpj": 1,
     "cpg": 1,
     "csg": 2,
@@ -1141,11 +1160,11 @@
     "csp": 2
    },
    {
-    "nombre": "Jose Luis Bezanilla",
-    "pj": 0,
+    "nombre": "Borja Arrieta",
+    "pj": 1,
     "pg": 0,
     "sg": 0,
-    "sp": 0,
+    "sp": 2,
     "cpj": 2,
     "cpg": 2,
     "csg": 4,
@@ -1153,17 +1172,17 @@
    },
    {
     "nombre": "Xabier Diaz",
-    "pj": 0,
+    "pj": 1,
     "pg": 0,
     "sg": 0,
-    "sp": 0,
+    "sp": 2,
     "cpj": 1,
     "cpg": 1,
     "csg": 2,
     "csp": 0
    },
    {
-    "nombre": "Borja Arrieta",
+    "nombre": "Jose Luis Bezanilla",
     "pj": 0,
     "pg": 0,
     "sg": 0,
@@ -1251,21 +1270,21 @@
   "clasificacion": [
    {
     "equipo": "DMP Valkyrias PIC",
-    "pj": 3,
-    "pg": 3,
+    "pj": 4,
+    "pg": 4,
     "pp": 0,
-    "sf": 17,
-    "sc": 4,
-    "pts": 22
+    "sf": 21,
+    "sc": 7,
+    "pts": 27
    },
    {
     "equipo": "Btc Bordado Express",
-    "pj": 3,
+    "pj": 4,
     "pg": 3,
-    "pp": 0,
-    "sf": 15,
-    "sc": 6,
-    "pts": 18
+    "pp": 1,
+    "sf": 18,
+    "sc": 10,
+    "pts": 21
    },
    {
     "equipo": "PADEL ZAMUDIO W6",
@@ -1420,9 +1439,28 @@
     "rival": "Btc Bordado Express",
     "lugar": "Visitante",
     "sede": "Bilbao Padel Indoor",
-    "dmp": "",
-    "riv": "",
-    "parejas": []
+    "dmp": 5,
+    "riv": 3,
+    "parejas": [
+     {
+      "dmp": "M Esther Lopez - Maider Rojo",
+      "riv": "Ainhoa Bilbao - Irantzu Aguirregoitia",
+      "sets": "3-6 0-6",
+      "g": 0
+     },
+     {
+      "dmp": "Ainara Unamuno - Marta Maestro",
+      "riv": "Naroa Gomez - Olatz Lazurtegui",
+      "sets": "6-4 6-1",
+      "g": 1
+     },
+     {
+      "dmp": "Marta Garate - Maria Puig",
+      "riv": "Carmen Iribar - Idoia Bilbao",
+      "sets": "4-6 7-6 7-6",
+      "g": 1
+     }
+    ]
    },
    {
     "j": 5,
@@ -1461,10 +1499,10 @@
   "jugadores": [
    {
     "nombre": "M Esther Lopez",
-    "pj": 2,
+    "pj": 3,
     "pg": 2,
     "sg": 4,
-    "sp": 1,
+    "sp": 3,
     "cpj": 0,
     "cpg": 0,
     "csg": 0,
@@ -1494,10 +1532,10 @@
    },
    {
     "nombre": "Maider Rojo",
-    "pj": 1,
+    "pj": 2,
     "pg": 1,
     "sg": 2,
-    "sp": 0,
+    "sp": 2,
     "cpj": 0,
     "cpg": 0,
     "csg": 0,
@@ -1505,9 +1543,9 @@
    },
    {
     "nombre": "Marta Maestro",
-    "pj": 1,
-    "pg": 1,
-    "sg": 2,
+    "pj": 2,
+    "pg": 2,
+    "sg": 4,
     "sp": 0,
     "cpj": 1,
     "cpg": 0,
@@ -1516,10 +1554,10 @@
    },
    {
     "nombre": "Marta Garate",
-    "pj": 2,
-    "pg": 2,
-    "sg": 4,
-    "sp": 0,
+    "pj": 3,
+    "pg": 3,
+    "sg": 6,
+    "sp": 1,
     "cpj": 0,
     "cpg": 0,
     "csg": 0,
@@ -1538,9 +1576,9 @@
    },
    {
     "nombre": "Ainara Unamuno",
-    "pj": 2,
-    "pg": 2,
-    "sg": 4,
+    "pj": 3,
+    "pg": 3,
+    "sg": 6,
     "sp": 0,
     "cpj": 1,
     "cpg": 0,
@@ -1592,6 +1630,17 @@
     "csp": 0
    },
    {
+    "nombre": "Maria Puig",
+    "pj": 1,
+    "pg": 1,
+    "sg": 2,
+    "sp": 1,
+    "cpj": 1,
+    "cpg": 0,
+    "csg": 0,
+    "csp": 2
+   },
+   {
     "nombre": "Miren Garcia",
     "pj": 0,
     "pg": 0,
@@ -1604,17 +1653,6 @@
    },
    {
     "nombre": "Paula Sánchez",
-    "pj": 0,
-    "pg": 0,
-    "sg": 0,
-    "sp": 0,
-    "cpj": 1,
-    "cpg": 0,
-    "csg": 0,
-    "csp": 2
-   },
-   {
-    "nombre": "Maria Puig",
     "pj": 0,
     "pg": 0,
     "sg": 0,
