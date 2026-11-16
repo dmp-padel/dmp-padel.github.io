@@ -5,6 +5,7 @@ Se actualiza sola con los datos de la Federación Bizkaina de Pádel:
 
 - **Domingo 23:30** (hora de invierno; 00:30 en verano)
 - **Lunes 9:00** (segunda pasada, por si los resultados se meten tarde)
+- **Lunes 22:30** (tercera pasada, para las actas que entran tarde)
 
 ## Puesta en marcha (una sola vez)
 

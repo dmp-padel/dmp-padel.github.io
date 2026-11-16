@@ -6,6 +6,8 @@ on:
     - cron: "30 22 * * 0"
     # Segunda pasada el lunes a las 9:00 (invierno) por si los resultados se meten tarde.
     - cron: "0 8 * * 1"
+    # Tercera pasada el lunes a las 22:30 (invierno) para las actas que entran tarde.
+    - cron: "30 21 * * 1"
   workflow_dispatch: # botón "Run workflow" para lanzarlo a mano
 
 permissions:
