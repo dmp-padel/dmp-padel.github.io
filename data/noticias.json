@@ -1,0 +1,64 @@
+[
+  {
+    "titulo": "¡Ya puedes jugar al DMP Pádel desde el móvil!",
+    "fecha": "2026-11-24",
+    "hora": "",
+    "equipo": "",
+    "rival": "",
+    "dmp": "",
+    "riv": "",
+    "texto": "Estrenamos juego propio del club 🎾\n\nElige con qué equipo quieres competir (DMP, DMP Academy o DMP Valkyrias PIC), monta tu pareja con los jugadores y jugadoras reales de la plantilla y enfréntate a los rivales reales de nuestra liga. Cuanto más arriba están en la clasificación, más difícil es ganarles.\n\nArrastra el dedo para moverte, tira globos, aprovecha los cristales y remata en la red. ¿Serás capaz de ganar a todos los rivales del grupo?\n\n👉 Pulsa «Jugar ahora» o el botón amarillo «🎾 Juego» del menú de arriba.\n\nAurrera DMP!! 💪🎾",
+    "fotos": [],
+    "enlace": {
+      "url": "juego.html",
+      "texto": "🎾 Jugar ahora"
+    }
+  },
+  {
+    "titulo": "Doble victoria en la jornada 5 y partidos de la jornada 6",
+    "fecha": "2026-11-22",
+    "hora": "",
+    "equipo": "",
+    "rival": "",
+    "dmp": "",
+    "riv": "",
+    "texto": "Gran fin de semana para el club:\n\n🏆 DMP (5ª) arrasó 0-12 en la pista de BTC Sushi Artist, con las cinco parejas ganadas, y sigue líder del grupo con 56 puntos. ¡Imparables!\n🏆 DMP Academy (6ª) ganó 6-2 en casa a 6 Enkarterri Padel Kluba y sube a la 4ª posición. ¡Así se hace!\n\n¡Enhorabuena a los dos! A seguir con esta racha.\n\n💙 DMP Valkyrias PIC (6ª femenina) cayó 3-5 en casa ante Neskak Enkarterri Padel Kluba, con victoria de la pareja Miren García – Paula Sánchez. Siguen segundas, a solo un punto del líder. ¡Cabeza alta, chicas, que la liga es larga y el sábado hay revancha!\n\nPróximos partidos (jornada 6):\n🎾 Viernes 27, 20:00 · Leioa Pádel Club – DMP Academy, en el BamVolea PIC.\n🎾 Sábado 28, 12:00 · Biwak + Lobbers – DMP Valkyrias PIC, en Biwak.\n🎾 Domingo 29, 17:00 · DMP – PadelBai ColónMetal, en casa, en el BamVolea PIC.\n\nAurrera DMP!! 💪🎾",
+    "fotos": []
+  },
+  {
+    "titulo": "Jornada 5: partidos del fin de semana",
+    "fecha": "2026-11-16",
+    "hora": "",
+    "equipo": "",
+    "rival": "",
+    "dmp": "",
+    "riv": "",
+    "texto": "Así queda la jornada 5 de liga para los tres equipos del club:\n\n🎾 Sábado 21, 19:00 · DMP (5ª masculina) visita a BTC Sushi Artist en Bilbao Padel Indoor.\n🎾 Domingo 22, 12:30 · DMP Academy (6ª masculina) recibe a 6 Enkarterri Padel Kluba en casa, en el BamVolea PIC.\n🎾 Domingo 22, 16:30 · DMP Valkyrias PIC (6ª femenina) recibe a Neskak Enkarterri Padel Kluba en casa, en el BamVolea PIC.\n\nAurrera DMP!! 💪🎾",
+    "fotos": []
+  },
+  {
+    "titulo": "Jornada 4: partidos del fin de semana",
+    "fecha": "2026-11-13",
+    "hora": "",
+    "equipo": "",
+    "rival": "",
+    "dmp": "",
+    "riv": "",
+    "texto": "Este fin de semana juegan los tres equipos del club la jornada 4 de liga:\n\n🎾 Sábado 14, 12:00 · DMP Valkyrias PIC (6ª femenina) visita a Btc Bordado Express en Bilbao Padel Indoor.\n🎾 Sábado 14, 18:30 · DMP Academy (6ª masculina) visita a RC Jolaseta Cañeros en el R.C. Jolaseta.\n🎾 Domingo 15, 12:30 · DMP (5ª masculina) recibe a AUSARTA Pic Quinta New en casa, en el BamVolea PIC.\n\nAurrera equipo!! 💪🎾",
+    "fotos": []
+  },
+  {
+    "titulo": "Derrota ajustada de DMP 6ª en el PIC",
+    "fecha": "2026-11-08",
+    "hora": "12:30",
+    "equipo": "sexta",
+    "rival": "PADELZALEAK PADELKO 6M1",
+    "dmp": 3,
+    "riv": 5,
+    "texto": "El domingo a las 12:30 jugó en el PIC su partido de liga nuestro equipo de 6ª, con derrota por 3-5. ¡Ánimo chavales, a seguir! 💪",
+    "fotos": [
+      "fotos/2026-11-08-1.webp",
+      "fotos/2026-11-08-2.webp"
+    ]
+  }
+]
